@@ -45,32 +45,32 @@ export default function Dasboard() {
                             <div className="theme-icon">
                                 <FontAwesomeIcon icon={faUser} />
                             </div>
-                            <h3>Customers</h3>
+                            <h3>Ticket</h3>
                         </a>
                         <a href="#" className="a" onclick="activateLink(event)">
                             <div className="theme-icon">
                                 <FontAwesomeIcon icon={faMagnifyingGlassChart} />
                             </div>
-                            <h3>Analytics</h3>
+                            <h3>Customer</h3>
                         </a>
                         <a href="#" className="a" onclick="activateLink(event)">
                             <div className="theme-icon">
                                 <FontAwesomeIcon icon={faEnvelope} />
                             </div>
-                            <h3>Messages</h3>
+                            <h3>Movie</h3>
                             <span className="msg_count">14</span>
                         </a>
                         <a href="#" className="a" onclick="activateLink(event)">
                             <div className="theme-icon">
                                 <FontAwesomeIcon icon={faReceipt} />
                             </div>
-                            <h3>Products</h3>
+                            <h3>Calendar Show</h3>
                         </a>
                         <a href="#" className="a" onclick="activateLink(event)">
                             <div className="theme-icon">
                                 <FontAwesomeIcon icon={faCircleExclamation} />
                             </div>
-                            <h3>Reports</h3>
+                            <h3>Show Time</h3>
                         </a>
                         <a href="#" className="a" onclick="activateLink(event)">
                             <div className="theme-icon">
@@ -78,12 +78,7 @@ export default function Dasboard() {
                             </div>
                             <h3>Settings</h3>
                         </a>
-                        <a href="#" className="a" onclick="activateLink(event)">
-                            <div className="theme-icon">
-                                <FontAwesomeIcon icon={faPlus} />
-                            </div>
-                            <h3>Add Product</h3>
-                        </a>
+
                         <a href="#" className="a" onclick="activateLink(event)">
                             <div className="theme-icon">
                                 <FontAwesomeIcon icon={faArrowRightFromBracket} />
@@ -94,10 +89,12 @@ export default function Dasboard() {
                 </aside>
                 {/*    aside section end*/}
 
-                    <ManagerTicket/>
                 {/*    main section start*/}
-
+                <ManagerTicket/>
                 {/*    main section end*/}
+
+
+
                 {/*    right section start*/}
                 <div className="right">
                     <div className="top-manager">
