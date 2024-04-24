@@ -63,6 +63,7 @@ body {
 
 
 .containerSeat {
+    margin-top: 5%;
     display: flex;
     flex-wrap: wrap; /* Cho phép các hàng tự động xuống dòng khi không đủ không gian */
     gap: 10px; /* Khoảng cách giữa các hàng */
@@ -70,8 +71,9 @@ body {
 
 .seat-row {
     display: flex;
+    position: relative;
     flex-wrap: nowrap; /* Đảm bảo các nút không tự động xuống dòng trong cùng một hàng */
-    margin-left: -5px; /* Để điều chỉnh lề trái để không có khoảng trống đầu dòng */
+    left: 13%;
 }
 
 .containerSeat button {
@@ -84,6 +86,9 @@ body {
     background-color: white;
     color: black;
     border-radius: 10px;
+}
+.containerSeat button:hover{
+    background-color: #fa7406
 }
 
 
@@ -123,6 +128,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 5px;
+    padding-left: 15%;
 }
 
 .seat-demo button {
@@ -153,6 +159,11 @@ body {
     margin-right: 50px;
 }
 
+.info p {
+    margin-left: 10px;
+    padding-left: 20px;
+}
+
 @media screen and (max-width: 991px) {
     .col-md-6 {
         flex: 0 0 100%;
@@ -175,7 +186,19 @@ body {
     }
 
 
+}
+
+@media screen and (max-width: 1199px) {
+
+    .seat-row {
+        display: flex;
+        position: relative;
+        flex-wrap: nowrap; /* Đảm bảo các nút không tự động xuống dòng trong cùng một hàng */
+        left: 0%;
+    }
 
 }
+
+
 
 

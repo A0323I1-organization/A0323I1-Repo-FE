@@ -1,34 +1,119 @@
 import {Col, Container, Row} from "react-bootstrap";
 import "./Seat.css"
 import {useEffect, useState} from "react";
-import * as seatService from "../../service/seat/SeatService"
+import * as seatService from "../../service/seat/SeatService";
+import * as movieService from "../../service/movieservice/MovieService";
+import * as paymentService from "../../service/payment/Payment";
 import {useParams} from "react-router-dom";
 import {format} from "date-fns";
+import ReactLoading from "react-loading";
+import axios from "axios";
 
 function Seat() {
 
-    const [listSeat, setListSeat] = useState();
+    const [listSeats, setListSeats] = useState([]);
     const {movieId} = useParams();
-    const {date} = useParams();
-    const {time} = useParams();
+    const {showDate} = useParams();
+    const {showTime} = useParams();
+    const [groupSeat, setGroupSeat] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [selectedSeat, setSelectedSeat] = useState([]);
+    const [movie, setMovie] = useState({});
+    const formatTime = showTime.slice(0, 5);
+    const [total, setTotal] = useState(0);
+    let seatId = ""
 
-    useEffect = () => {
-
-    }
+    useEffect(() => {
+        if (listSeats.length === 0) {
+            getAllSeat();
+            getMovie();
+        } else {
+            displayAllSeat();
+        }
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 1500);
+    }, [listSeats]);
 
     const getAllSeat = async () => {
-        const parts = date.split('-');
+        const parts = showDate.split('-');
         const day = parseInt(parts[0], 10);
         const month = parseInt(parts[1], 10) - 1;
         const year = parseInt(parts[2], 10);
 
-        const date = new Date(year, month, day);
+        const changeDate = new Date(year, month, day);
 
-        const formattedDate = format(date, "yyyy-MM-dd");
+        const formattedDate = format(changeDate, "yyyy-MM-dd");
 
-
-        const res = await seatService.getAllSeat(date)
+        const list = await seatService.getAllSeat(formattedDate, showTime, movieId);
+        setListSeats(list);
     }
+
+    const displayAllSeat = async () => {
+        const updateGroupSeat = [[]];
+        for (let i = 0; i < 10; i++) {
+            const updateGroupSeatSub = [];
+            for (let j = 0; j < 10; j++) {
+                if (listSeats.at(i * 10 + j) != null) {
+                    updateGroupSeatSub.push(listSeats.at(i * 10 + j));
+                }
+            }
+            updateGroupSeat.push(updateGroupSeatSub);
+        }
+        setGroupSeat(updateGroupSeat);
+    }
+
+    const ChooseSeat = (e, seat) => {
+        if (!selectedSeat.includes(seat) && !seat.checkSeat) {
+            if (selectedSeat.length >= 8) {
+                alert("Bạn chỉ được đặt tối đa 8 ghế !!!");
+            } else {
+                selectedSeat.push(seat);
+                setTotal(total + seat.typeSeatPrice);
+                e.target.style.backgroundColor = "#fa7406"
+            }
+        } else if (selectedSeat.includes(seat)) {
+            console.log("remove")
+            setSelectedSeat(selectedSeat.filter(item => item !== seat));
+            setTotal(total - seat.typeSeatPrice);
+            e.target.style.backgroundColor = ""
+        }
+    }
+
+    const getMovie = async () => {
+        const movie = await movieService.getMovieById(movieId);
+        setMovie(movie);
+    }
+
+    const ChangePage = async (e) => {
+        let listId = [];
+        for (let i = 0; i < selectedSeat.length; i++) {
+            listId.push(selectedSeat[i].seatId);
+        }
+        // await seatService.bookSeat(listId);
+        const url = await paymentService.payment(total,listId);
+
+        localStorage.setItem('listId', JSON.stringify(listId));
+        window.location.href = url;
+
+    }
+
+
+    if (isLoading) {
+        return (
+            <div className="pre-loading">
+                <p>Chờ xíu nhe....</p>
+                <ReactLoading
+                    type={"spinningBubbles"}
+                    color={"#3c84f1"}
+                    height={100}
+                    width={100}
+
+                />
+            </div>
+        )
+    }
+
     return (
         <>
             <Container>
@@ -56,19 +141,25 @@ function Seat() {
                 <Row>
                     <Col md={6}>
                         <div className="containerSeat">
-                            <div className="seat-row">
-                                <button style={{backgroundColor: "#fa7406"}}>A1</button>
-                                <button style={{backgroundColor: "#bbbbbb"}}>A2</button>
-                                <button style={{border: "1px solid #01c73c"}}>A3</button>
-                                <button style={{border: "1px solid #01c73c"}}>A4</button>
-                                <button style={{border: "1px solid #01c73c"}}>A5</button>
-                                <button style={{border: "1px solid #01c73c"}}>A6</button>
-                                <button style={{border: "1px solid #01c73c"}}>A7</button>
-                                <button style={{border: "1px solid #01c73c"}}>A8</button>
-                                <button style={{border: "1px solid #01c73c"}}>A9</button>
-                                <button style={{border: "1px solid #01c73c"}}>A10</button>
-                            </div>
-
+                            {
+                                groupSeat.map((row, index) => (
+                                    <div className="seat-row" key={index}>
+                                        {row.map((seat, seatIndex) =>
+                                            (
+                                                <button key={seatIndex}
+                                                        id={seat.seatId}
+                                                        style={{
+                                                            backgroundColor: seat.checkSeat ? "#bbbbbb" : "",
+                                                            border: seat.typeSeatName === "VIP" ? "1px solid red" : "1px solid #01c73c",
+                                                            cursor: seat.checkSeat ? "default" : "pointer"
+                                                        }}
+                                                        onClick={(e) => ChooseSeat(e, seat)}
+                                                >
+                                                    {seat.seatName}
+                                                </button>
+                                            ))}
+                                    </div>
+                                ))}
 
                             <div className="instruction">
                                 <h4>Màn Hình</h4>
@@ -98,28 +189,36 @@ function Seat() {
                         <div className="confirm-ticket">
                             <div>
                                 <img
-                                    src="https://cdn.galaxycine.vn/media/2024/2/23/kungfu-panda-4-500_1708659195441.jpg"
+                                    src={movie.movieImage}
                                     alt="Card image cap"/>
 
                                 <div className="info">
-                                    <h5>Kung Fu Panda 4</h5>
                                     <p>
-                                        <span>Suất chiế: 08:00</span>
-                                        <span>T3 23/03/2024</span>
+                                        <h5>{movie.movieName}</h5>
+
+                                    </p>
+                                    <p>
+                                        <span>Suất chiếu: {formatTime}-</span>
+                                        <span>{showDate}</span>
                                     </p>
                                     <hr className="dotted-line"/>
                                     <p>
-                                        <span>2x Ghế:  </span>
-                                        <span>180.000 </span>
+                                        <span>Ghế:</span>
+                                        {
+                                            selectedSeat.map((item, index) => (
+                                                <span key={index} style={{marginLeft: "5px"}}>{item.seatName}</span>
+                                            ))
+                                        }
                                     </p>
                                     <hr className="dotted-line"/>
                                     <p>
                                         <span>Tổng: </span>
-                                        <span>180.000 </span>
+                                        <span>{total} </span>
                                     </p>
                                     <div>
-                                        <button href="#" className="btn btn-primary">Quay Lại</button>
-                                        <button href="#" className="btn btn-primary">Tiếp Tục</button>
+                                        <button className="btn btn-primary">Quay Lại</button>
+                                        <button className="btn btn-primary" onClick={(e) => ChangePage(e)}>Tiếp Tục
+                                        </button>
                                     </div>
                                 </div>
                             </div>
