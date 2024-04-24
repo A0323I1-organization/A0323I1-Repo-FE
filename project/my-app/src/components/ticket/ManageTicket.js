@@ -2,7 +2,7 @@ import "../dasboard/Dasboard.css";
 import "../ticket/ManageTicket.css";
 import React, {useEffect, useState} from "react";
 import {Link, useParams} from "react-router-dom";
-import * as ticketService from "../../service/TicketService";
+import * as ticketService from "../../service/ticket/TicketService";
 import Popup from "./Popup";
 
 export  default  function ManagerTicket() {

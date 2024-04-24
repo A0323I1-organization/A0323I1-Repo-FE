@@ -3,7 +3,7 @@ import "../ticket/Popup.css";
 
 import {faDownload} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import * as ticketService from "../../service/TicketService";
+import * as ticketService from "../../service/ticket/TicketService";
 export default function Popup({ticketData,handleClosePopup}) {
         const {id,useName} = ticketData;
 
