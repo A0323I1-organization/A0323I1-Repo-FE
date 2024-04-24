@@ -1,6 +1,9 @@
 
 import './App.css';
+// import {BrowserRouter,Route,Routes} from "react-router-dom"
+import {BrowserRouter,Route,Routes} from "react-router-dom"
 import 'react-toastify/dist/ReactToastify.css';
+
 import Dasboard from "./components/dasboard/Dasboard";
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import React from "react";
@@ -16,6 +19,13 @@ function App() {
       </Router>
 
 
+
+
+        <Route path='/create' element={<Create/>}></Route>
+            <Route path="/employee" element={<ListEmployee/>}></Route>
+            <Route path="/employee/detail/:id" element={<DetailEmployee/>}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
