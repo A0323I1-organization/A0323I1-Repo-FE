@@ -3,15 +3,22 @@ import './App.css';
 // import {BrowserRouter,Route,Routes} from "react-router-dom"
 import {BrowserRouter,Route,Routes} from "react-router-dom"
 import 'react-toastify/dist/ReactToastify.css';
-import Create from './components/employee/create';
-import Dasboard from './components/dashboard/dashboard';
-import ListEmployee from "./components/employee/ListEmployee";
-import DetailEmployee from "./components/employee/DetailEmployee";
+
+import Dasboard from "./components/dasboard/Dasboard";
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
+import React from "react";
+
 function App() {
   return (
     <>
-    <BrowserRouter>
-        <Routes>
+      <Router>
+          <Routes>
+            <Route path="/" element={<Dasboard/>}/>
+            {/*<Route path="/exportPdf/:id" element={<Dasboard/>}/>*/}
+          </Routes>
+      </Router>
+
+
 
 
         <Route path='/create' element={<Create/>}></Route>
