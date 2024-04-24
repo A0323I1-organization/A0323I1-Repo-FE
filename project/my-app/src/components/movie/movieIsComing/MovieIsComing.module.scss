@@ -1,0 +1,155 @@
+.titleList .title {
+    list-style-type: none;
+    display: flex;
+    padding-left: 0;
+}
+
+.titleList .title li {
+    margin-right: 4%;
+    display: inline-block;
+    position: relative;
+}
+
+.titleList .title .titleLine {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.titleList .title .titleLine:hover {
+    color: #166bae;
+}
+
+.titleList .titleLine.active {
+    color: #034fa2;
+}
+
+.titleList .title .titleLine::after {
+    content: '';
+    height: 1px;
+    width: 0;
+    background: #034ea2;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.4s;
+}
+
+.titleList .titleLine.active::after {
+    width: 100%;
+}
+
+.title span {
+    border-left: 4px solid #034ea2;
+    margin-right: 5px;
+    height: 20px;
+    transform: translateY(5px);
+}
+
+ul.videos {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul.videos li {
+    flex-basis: 25%;
+}
+
+.videoItem {
+    padding: 20px;
+}
+
+ul.videos li img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 9px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+}
+
+ul.videos li .videoTop {
+    position: relative;
+    overflow: hidden;
+}
+
+ul.videos li .videoTop .videoThumb {
+    display: block;
+}
+
+ul.videos li .videoTop .listBtn {
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+}
+
+ul.videos li .videoTop:hover .listBtn {
+    z-index: 0;
+}
+
+ul.videos li .videoTop .listBtn a {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: lighter;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+ul.videos li .videoTop:hover .listBtn a.buyClick {
+    background-color: #f58020;
+    white-space: nowrap;
+}
+
+ul.videos li .videoTop:hover .listBtn a.buyClick:hover {
+    background-color: orange;
+}
+
+ul.videos li .videoTop:hover .videoThumb img {
+    filter: brightness(60%);
+    transition: 0.5s;
+}
+
+ul.videos li .videoInfo {
+    padding: 8px 0;
+}
+
+ul.videos li .videoInfo .videoName {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+@media (max-width: 1082px) {
+    ul.videos li .videoTop:hover .listBtn {
+        display: none;
+    }
+}
+
+@media (max-width: 1082px) and (orientation: landscape) {
+
+    ul.videos li .videoTop:hover .listBtn {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 980px) {
+
+    ul.videos li {
+        flex-basis: 50%;
+    }
+
+}
+
+.h4Film {
+    margin: 0;
+    font-size: 1.4rem;
+}

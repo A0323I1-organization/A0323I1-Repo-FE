@@ -1,7 +1,7 @@
 import {useParams} from "react-router";
 import {useEffect, useState} from "react";
-import{selectById} from '../../service/EmployeeService'
-import styles from "../EmployeeComponents/style.module.scss"
+import styles from '../employee/style.module.scss';
+import {selectById} from "../../service/employee/EmployeeService";
 function DetailEmployee(props){
     const{id} = useParams();
     const [employee, setEmployee]= useState()
