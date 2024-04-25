@@ -2,7 +2,7 @@ import styles from '../employee/style.module.scss';
 import "bootstrap/dist/css/bootstrap.css";
 import {useEffect, useState} from "react";
 import {NavLink} from "react-router-dom";
-import {findAll,deleteById} from "../../service/EmployeeService";
+import {deleteById,findAll} from "../../service/EmployeeService";
 import '@fortawesome/fontawesome-free/css/all.css';
 import 'sweetalert2/dist/sweetalert2.css';
 import Swal from "sweetalert2";
