@@ -12,8 +12,6 @@ function App() {
     <>
     <BrowserRouter>
         <Routes>
-
-
         <Route path='/create' element={<Create/>}></Route>
             <Route path="/employee" element={<ListEmployee/>}></Route>
             <Route path="/employee/detail/:id" element={<DetailEmployee/>}></Route>
