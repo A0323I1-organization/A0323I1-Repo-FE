@@ -4,67 +4,40 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Chart from "react-apexcharts";
 
-export default function MovieSaleChart() {
-  const [movies, setMovie] = useState();
+export default function ShowTimeChart() {
   const [lgShow, setLgShow] = useState(false);
+  const [showTimes, setShowTime] = useState();
   useEffect(() => {
     getAll();
   }, []);
-
   const getAll = async () => {
     try {
-      const temp = await dashBoard.findAllMovieSales();
-      setMovie(temp);
+      const temp = await dashBoard.findAllTopShowTime();
+      setShowTime(temp);
     } catch (err) {
       console.log(err);
     }
   };
   const series = [
     {
-      name: "Revenue",
-      type: "column",
-      data: movies?.map((movie) => movie.totalPriceTicket),
-    },
-    {
       name: "Tickets",
-      type: "line",
-      data: movies?.map((movie) => movie.countTicket),
+      data: showTimes?.map((showTime) => showTime.showTimeTotalTicket),
     },
   ];
   const options = {
-    chart: {
-      height: 350,
-      type: "line",
-    },
-    stroke: {
-      width: [0, 4],
-    },
-    dataLabels: {
-      enabled: true,
-      // enabledOnSeries: [1]
-    },
-    labels: movies?.map((movie) => movie.movieName),
-    xaxis: {
-      type: "String",
-    },
-    yaxis: [
-      {
+    labels: showTimes?.map((showTime) => showTime.showTimeDetail),
+      xaxis: {
+        type: "time",
+      },
+      yaxis: {
         title: {
-          text: "Revenue",
+          text: 'Tickets',
         },
       },
-      {
-        opposite: true,
-        title: {
-          text: "Tickets",
-        },
-      },
-    ],
-  };
-
+  }
   return (
     <>
-      <Chart type="line" series={series} options={options} height={350}></Chart>
+      <Chart type="line" series={series} options={options} width={'90%'} ></Chart>
       <Button onClick={() => setLgShow(true)}>Show all</Button>
       <Modal
         size="lg"
@@ -74,7 +47,7 @@ export default function MovieSaleChart() {
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-modal-sizes-title-lg">
-            Top 100 Movies
+            Top Show Time
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -82,20 +55,18 @@ export default function MovieSaleChart() {
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Movie</th>
+                <th scope="col">Time</th>
                 <th scope="col">Total Tickets</th>
-                <th scope="col">Total Revenue</th>
               </tr>
             </thead>
             <tbody>
-            {movies?.map((movie, index) => (
-            <tr key={movie.id}>
-              <td>{index}</td>
-              <td>{movie.movieName}</td>
-              <td>{movie.countTicket}</td>
-              <td>{movie.totalPriceTicket}</td>
-            </tr>
-          ))}
+              {showTimes?.map((showTime, index) => (
+                <tr key={showTime.id}>
+                  <td>{index}</td>
+                  <td>{showTime.showTimeDetail}</td>
+                  <td>{showTime.showTimeTotalTicket}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </Modal.Body>
