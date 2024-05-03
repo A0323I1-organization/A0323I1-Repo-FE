@@ -1,0 +1,65 @@
+main h1 {
+    color: var(--clr-dark);
+}
+
+main .recent_order {
+    margin-top: 2rem;
+    height: 60vh;
+}
+
+main .recent_order h1 {
+    color: var(--clr-dark);
+}
+
+main .recent_order table {
+    background-color: var(--clr-white);
+    width: 100%;
+    border-radius: var(--border-radius-3);
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all .3s ease;
+    color: var(--clr-dark);
+
+}
+
+main .recent_order table:hover {
+    box-shadow: none;
+}
+main table tbody{
+    position: relative;
+}
+main table tbody span.not__found{
+    position: absolute;
+    left:34%;
+    margin-top: 20px;
+    background: var(--clr-danger);
+    color: var(--clr-white);
+    padding: 5px 10px;
+    font-size: 18px;
+    border-radius: var(--border-radius-1);
+}
+main table tbody tr {
+    height: 3.8rem;
+    border-bottom: 1px solid var(--clr-white);
+    color: var(--clr-dark-variant);
+}
+
+main table tbody td {
+    height: 3.8rem;
+    border-bottom: 1px solid var(--clr-dark);
+
+}
+main table tbody td.not__found {
+    width: 100%;
+    text-align: center;
+}
+main table tbody tr:last-child td {
+    border: none;
+}
+
+main .recent_order a {
+    text-align: center;
+    display: block;
+    margin: 1rem;
+}
