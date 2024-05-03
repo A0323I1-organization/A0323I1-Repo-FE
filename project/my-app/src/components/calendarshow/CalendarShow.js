@@ -5,7 +5,7 @@ import "./CalendarShow.css";
 import {Card, Col, Container, Row} from "react-bootstrap";
 import {format} from "date-fns";
 import {Link, useParams} from 'react-router-dom';
-
+import Iframe from 'react-iframe'
 
 import ReactLoading from "react-loading";
 import ReactPlayer from "react-player";
@@ -28,30 +28,19 @@ function CalendarShow() {
 
     const videoSrcSub = ""+videoSrc;
     useEffect(() => {
-        // hideVideo();
         if (listShowDates.length === 0 || !movie || !movieIsShowing) {
             getMovie();
             findAllShowDate();
             getAllMovieShowing();
         }
         setTimeout(() => {
+            setVideoSrc(movie.movieTrailer)
             setIsLoading(false);
         }, 3000);
     }, [movieId]);
 
 
-    const playVideo = () => {
-        console.log("ok")
-        setIsVideoVisible(true);
-        setVideoSrc(movie.movieTrailer);
-        console.log(videoSrc)
-    }
-    // const hideVideo = () => {
-    //     console.log("cancle")
-    //     setIsVideoVisible(false);
-    //     setVideoSrc('');
-    //
-    // }
+
     const getMovie = async () => {
         const movie = await movieService.getMovieById(movieId);
         const dateFormat = format(movie.movieStartDay, "dd-MM-yyyy");
@@ -158,41 +147,24 @@ function CalendarShow() {
 
     return (
         <>
-            <>
-                <Col md={12}>
-                        <div className="trailer">
-                            {movie && <img src={movie.movieImage} alt="Movie Poster" className="avatar"/>}
-                            <img
-                                src="https://www.galaxycine.vn/_next/static/media/button-play.2f9c0030.png"
-                                className="display-trailer"
-                                onClick={() => playVideo()}
-                                alt="Play Button"
-                            />
-                            {isVideoVisible && (
-                                <div className="video-overplay">
-                                    <div className="video-container">
-                                      
-                                        <iframe
-                                            className="video-iframe"
-                                            src={videoSrc}
-                                            allow="autoplay"
-                                            allowFullScreen
-                                        ></iframe>
 
-
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-
-                </Col>
-                <Container>
-                    <div className="content">
-                        <Row>
-                            <div className="row">
-                                <Col md={4}>
-                                    <div className="pic">
-                                        <img src={movie.movieImage} alt="Movie Poster"/>
+            <Col md={12}>
+                <div className="trailer">
+                    <iframe width="560"
+                            height="500"
+                            src={videoSrc}
+                            title="GeeksforGeeks"
+                            className="video-iframe"
+                    />
+                </div>
+            </Col>
+            <Container>
+                <div className="content">
+                    <Row>
+                        <div className="row">
+                            <Col md={4}>
+                                <div className="pic">
+                                <img src={movie.movieImage} alt="Movie Poster"/>
                                     </div>
                                 </Col>
                                 <Col md={4}>
@@ -329,7 +301,7 @@ function CalendarShow() {
                     </div>
 
                 </Container>
-            </>
+
             )
 
         </>

@@ -10,7 +10,7 @@ import DetailTicket from "./components/ticket/DetailTicket";
 function App() {
   return (
 
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path={"/booking/:movieId"} element={<CalendarShow/>}></Route>
           <Route path={"/seat/:showDate/:showTime/:movieId"} element={<Seat/>}></Route>
