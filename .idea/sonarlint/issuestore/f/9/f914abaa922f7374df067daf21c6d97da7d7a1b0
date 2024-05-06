@@ -1,0 +1,18 @@
+
+Qjavascript:S1128")Remove this unused import of 'useEffect'.(ëõŞöûÿÿÿÿ8ÁŸÑéô1
+bjavascript:S1481
+":Remove the declaration of the unused 'classroom' variable.(¥³Ïöûÿÿÿÿ8ÂŸÑéô1
+_javascript:S1854
+"7Remove this useless assignment to variable "classroom".(¥³Ïöûÿÿÿÿ8ÃŸÑéô1
+ejavascript:S1481
+"=Remove the declaration of the unused 'setClassroom' variable.(¥³Ïöûÿÿÿÿ8ÃŸÑéô1
+bjavascript:S1854
+":Remove this useless assignment to variable "setClassroom".(¥³Ïöûÿÿÿÿ8ÃŸÑéô1
+Jjavascript:S1656."''value.fullname' is assigned to itself.(—Ü¿¢8ÄŸÑéô1
+Jjavascript:S1656/"''value.birthday' is assigned to itself.(Ã™»8ÄŸÑéô1
+Ijavascript:S16560"&'value.address' is assigned to itself.(¥¥†ë8ÄŸÑéô1
+Tjavascript:S16561",'value.identity_card' is assigned to itself.(ÍæËıÿÿÿÿ8ÄŸÑéô1
+Gjavascript:S16562"$'value.email' is assigned to itself.(õŒ Ø8ÄŸÑéô1
+Ljavascript:S16563"$'value.phone' is assigned to itself.(ƒÜìûÿÿÿÿ8ÄŸÑéô1
+Hjavascript:S16564"%'value.gender' is assigned to itself.(†´Æü8ÄŸÑéô1
+Tjavascript:S6749?",A fragment with only one child is redundant.(™åÑğüÿÿÿÿ8ÅŸÑéô1

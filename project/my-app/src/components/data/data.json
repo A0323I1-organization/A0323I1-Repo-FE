@@ -1,0 +1,30 @@
+{
+  "customers": [
+    {
+      "customer_id" : 1,
+      "fullname": "Bùi Nguyễn Trung Quân",
+      "birthday": "20/01/1989",
+      "gender": "male",
+      "identity_card": "0123123123",
+      "email": "trungquanidol@gmail.com",
+      "address": "Da Lat",
+      "phone": "0112233445",
+      "customer_account_id": "customer",
+      "point": 120,
+      "customer_image": "https://th.bing.com/th/id/OIP.WrTJmhFJpOjAkCi9ebQVIAAAAA?rs=1&pid=ImgDetMain"
+    },
+    {
+      "customer_id" : 2,
+      "fullname": "Dương Thị Thu Hà",
+      "birthday": "20/01/1989",
+      "gender": "male",
+      "identity_card": "0123123123",
+      "email": "trungquanidol@gmail.com",
+      "address": "Da Lat",
+      "phone": "0112233445",
+      "customer_account_id": "customer",
+      "point": 120,
+      "customer_image": "https://th.bing.com/th/id/OIP.WrTJmhFJpOjAkCi9ebQVIAAAAA?rs=1&pid=ImgDetMain"
+    }
+  ]
+}
