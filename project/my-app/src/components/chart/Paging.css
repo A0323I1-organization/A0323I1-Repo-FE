@@ -1,0 +1,33 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Để các nút ngang hàng với nhau */
+    padding: 20px 0;
+  }
+  
+  .page-item {
+    margin: 0 5px;
+    border-radius: 5px; /* Bo tròn các góc */
+  }
+  
+  .page-link {
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #495057;
+    text-decoration: none;
+    border-radius: 10px; /* Bo tròn các góc */
+  }
+  
+  .page-link:hover {
+    background-color: #e9ecef;
+  }
+  .active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+  }
+  
+  .break-me {
+    display: none;
+  }
