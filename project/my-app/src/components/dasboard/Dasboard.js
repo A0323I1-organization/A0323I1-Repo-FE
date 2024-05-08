@@ -16,6 +16,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import React from "react";
+import StatisticDashBoard from "../statistics/StatisticDashBoard";
+import logoBrand from '../../assets/img/brand.jpg'
 import ManagerTicket from "../ticket/ManageTicket";
 
 export default function Dasboard() {
@@ -28,9 +30,7 @@ export default function Dasboard() {
                     <div className="top-manager">
                         <div className="logo-manager">
                             <h2>
-                                <img src="https://scontent.fdad1-4.fna.fbcdn.net/v/t1.6435-9/60493220_2727687037245858_4681446895883649024_n.png?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=IQta9GJxB34AX9jKOQt&_nc_ht=scontent.fdad1-4.fna&cb_e2o_trans=t&oh=00_AfDIiOAL8aQzxMBnQl_NQzKhwR18N4EwMBV_Lm6Cx02PXw&oe=66223EB8"
-                                     alt="galaxy cinema" style={ {height:'100px', width: '125px'}}/>
-
+                                <img src={logoBrand} style={ {height:'100%', width: '100%'}}/>
                             </h2>
                         </div>
                         <div className="close-manager" id="close_btn">
@@ -41,23 +41,25 @@ export default function Dasboard() {
                     </div>
                     {/*        end top*/}
                     <div className="sidebar-manager">
-                        <a href="#" className="a active" onclick="activateLink(event)">
+                        <a href="#" className="a" onclick="activateLink(event)">
                             <div className="theme-icon">
                                 <FontAwesomeIcon icon={faUser} />
                             </div>
-                            <h3>Ticket</h3>
+                            <h3>Customers</h3>
                         </a>
-                        <a href="#" className="a" onclick="activateLink(event)">
+                        <a href="#" className="a active" onclick="activateLink(event)">
                             <div className="theme-icon">
                                 <FontAwesomeIcon icon={faMagnifyingGlassChart} />
                             </div>
-                            <h3>Customer</h3>
+                            <h3>Analytics</h3>
+
                         </a>
                         <a href="#" className="a" onclick="activateLink(event)">
                             <div className="theme-icon">
                                 <FontAwesomeIcon icon={faEnvelope} />
                             </div>
-                            <h3>Movie</h3>
+                            <h3>Messages</h3>
+
                             <span className="msg_count">14</span>
                         </a>
                         <a href="#" className="a" onclick="activateLink(event)">
@@ -71,6 +73,7 @@ export default function Dasboard() {
                                 <FontAwesomeIcon icon={faCircleExclamation} />
                             </div>
                             <h3>Show Time</h3>
+
                         </a>
                         <a href="#" className="a" onclick="activateLink(event)">
                             <div className="theme-icon">
@@ -78,7 +81,6 @@ export default function Dasboard() {
                             </div>
                             <h3>Settings</h3>
                         </a>
-
                         <a href="#" className="a" onclick="activateLink(event)">
                             <div className="theme-icon">
                                 <FontAwesomeIcon icon={faArrowRightFromBracket} />
@@ -87,6 +89,8 @@ export default function Dasboard() {
                         </a>
                     </div>
                 </aside>
+
+                       <StatisticDashBoard/>
                 {/*    aside section end*/}
 
                 {/*    main section start*/}

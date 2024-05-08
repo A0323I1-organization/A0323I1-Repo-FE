@@ -124,6 +124,7 @@ export  default  function ManagerTicket() {
                             </tr>
                             </thead>
                             <tbody>
+
                             {result && result.length > 0 ? (tickets.filter((ticket) =>{
                                 const formattedTicketId = `TK${String(ticket.ticketId).padStart(4, '0')}`;
                                 const formattedCustomerId = `CS${String(ticket.customerId).padStart(4, '0')}`;
@@ -144,6 +145,7 @@ export  default  function ManagerTicket() {
                                     <td>{ticket.movieName}</td>
                                     <td>{ticket.showDate}</td>
 
+
                                     <td className="primary">
                                         {/*<button onClick={() => handleExportPdf(ticket.ticketId)}>*/}
                                         {/*    <span className="button__text">Confirm</span>*/}
@@ -158,7 +160,6 @@ export  default  function ManagerTicket() {
                                             <span className="not__found">Không tìm thấy vé xem phim phù hợp.</span>
                                         </div>
                             )}
-
                             </tbody>
                         </table>
                         {
@@ -194,7 +195,6 @@ export  default  function ManagerTicket() {
                     {/*        end recent order*/}
                     {showPopup && (<Popup ticketData={ticketData} handleClosePopup={handleClosePopup}/>)}
                 </main>
-
             </>
         )
 }
