@@ -1,0 +1,334 @@
+.pre-loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.pre-loading p {
+    font-size: 18px;
+    color: #555;
+}
+
+
+.react-loading-container {
+    margin-top: 20px;
+}
+.trailer {
+    display: flex;
+    right: 0;
+    left: 0;
+    max-width: 100%;
+    background-color: black;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.content {
+    margin-bottom: 50px;
+}
+
+.avatar {
+    max-height: 500px;
+    object-fit: cover;
+    width: 35%;
+    z-index: 0;
+    opacity: 70%;
+    min-height: 450px;
+}
+
+.display-trailer {
+
+    position: absolute;
+    width: 5%;
+    height: 15%;
+    z-index: 2;
+    left: 47%;
+    top: 20%;
+    cursor: pointer;
+}
+
+.video-overplay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 1700px;
+    height: 80vh;
+    overflow: hidden;
+    z-index: 9999;
+
+}
+
+.video-iframe {
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+
+}
+
+.content {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.content .row {
+    height: 500px;
+}
+
+.pic {
+    justify-content: center;
+    align-items: center;
+    max-height: 500px;
+}
+
+.pic img {
+    width: 100%;
+    max-height: 90%;
+    border: 0.5px solid black;
+    float: right;
+}
+
+.introduce {
+    max-height: 500px;
+}
+
+.introduce span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.introduce svg {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.introduce ul {
+    list-style: none;
+    padding: 0;
+}
+
+.introduce li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.introduce li:last-child {
+    margin-right: 0;
+}
+
+.introduce li:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+.nav-right {
+    z-index: 100;
+    display: flex;
+    flex-direction: column; /* Xếp theo chiều dọc */
+    align-items: center; /* Căn giữa các phần tử */
+    width: 100%;
+    flex-wrap: nowrap; /* Ngăn không cho các phần tử bị đẩy xuống */
+
+}
+
+
+.card {
+    position: relative; /* Thêm thuộc tính position */
+    justify-content: center;
+    align-items: center;
+    border: 0px;
+    margin: 0 5px 5px -5px;
+    width: 50%;
+    display: inline;
+    cursor: pointer;
+
+}
+
+.card img {
+    /*display: block; !* Để tránh khoảng trống dưới ảnh *!*/
+}
+
+.card button {
+    display: none; /* Ẩn button ban đầu */
+    position: absolute; /* Sử dụng position absolute để đặt button */
+    top: 50%; /* Đưa button lên giữa theo chiều dọc */
+    left: 50%; /* Đưa button ra giữa theo chiều ngang */
+    transform: translate(-50%, -50%); /* Để căn giữa button chính xác */
+    background-color: #f58020;
+    color: white;
+    font-weight: lighter;
+    font-size: 15px;
+    padding: 10px 20px;
+}
+
+.card:hover button {
+    display: block; /* Hiện button khi hover vào card */
+}
+
+
+.review {
+    margin-top: 10%;
+}
+
+.review b {
+    border-left: 4px solid blue;
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+.calendar {
+    z-index: 2;
+}
+
+.calendar strong {
+    border-left: 4px solid blue;
+    padding: 3px;
+    font-size: 20px;
+}
+
+.calendar button {
+    padding: 10px;
+    background-color: white;
+    border: 0.5px solid gray;
+    border-radius: 10px;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    margin: 20px 20px 0 50px;
+    background-color: blue;
+    width: 90%;
+}
+
+
+.show-time button {
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    border: 0.5px solid gray;
+    border-radius: 10px;
+}
+
+
+.show-time strong {
+    border-left: 4px solid blue;
+    padding-left: 5px;
+    margin: 0px;
+    font-size: 20px;
+    float: left;
+}
+
+.btn-page button{
+    background-color: blue;
+    color: white;
+}
+
+@media screen and (min-width: 767px) and (max-width: 992px){
+    body {
+        clear: both;
+    }
+
+    .nav-right {
+        display: none;
+    }
+    .col-md-4 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    ul {
+        float: left;
+        clear: both;
+    }
+    .pic {
+        height:500px ;
+    }
+
+}
+@media screen and (max-width: 1200px) {
+    .nav-right {
+        display: none;
+    }
+
+    .content .row {
+        height: auto;
+    }
+    .row {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .pic {
+        justify-content: center;
+        align-items: center;
+        max-height: 400px;
+        width: 100%;
+    }
+
+    .pic img {
+        width: 100%;
+        max-height: 100%;
+        border: 0.5px solid black;
+        float: right;
+    }
+
+
+}
+
+@media screen and (max-width: 477px) {
+    body {
+        clear: both;
+    }
+
+    .nav-right {
+        display: none;
+    }
+
+    .pic {
+        justify-content: center;
+        align-items: center;
+        max-height: 400px;
+        width: 100%;
+    }
+
+    .pic img {
+        width: 100%;
+        max-height: 100%;
+        border: 0.5px solid black;
+        float: right;
+    }
+
+    .introduce h2 {
+        margin-bottom: 10px; /* Để tạo khoảng cách giữa tiêu đề và các phần tử khác */
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .review {
+        margin-top: 80%;
+    }
+}

@@ -1,0 +1,51 @@
+.title-list .title {
+    list-style-type: none;
+    display: flex;
+    padding-left: 0;
+    align-items: center;
+}
+
+.title-list .title li {
+    margin-right: 4%;
+    display: inline-block;
+    position: relative;
+}
+
+.title span {
+    border-left: 4px solid #034ea2;
+    margin-right: 5px;
+    height: 20px;
+    transform: translateY(5px);
+}
+
+.title-list .title .title-line {
+    cursor: pointer;
+}
+
+.title-list .title .title-line:hover {
+    color: #166bae;
+}
+
+.title-list .title-line.active-name {
+    color: #034fa2;
+}
+
+.title-list .title .title-line::after {
+    content: '';
+    height: 1px;
+    width: 0;
+    background: #034ea2;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.4s;
+}
+
+.title-list .title-line.active-name::after {
+    width: 100%;
+}
+
+.h4Film {
+    margin: 0;
+    font-size: 1.4rem;
+}
