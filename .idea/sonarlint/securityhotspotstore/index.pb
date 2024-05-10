@@ -11,3 +11,25 @@ h
 8project/my-app/src/components/employee/style.module.scss,6\4\64aa0a310ee080edb86d80703e661dd5d47ecb87
 ^
 .project/my-app/src/service/EmployeeService.jsx,d\8\d80f89aaa263d17c6bca69ee1630a429c8b34413
+a
+1project/my-app/src/components/employee/create.css,b\0\b090acdc48c9ad5b7d009e14c993e95d5c9ff439
+`
+0project/my-app/src/components/employee/create.js,5\7\57061248d6b9a96ccd859ee3bbe0b95b2f97911d
+H
+project/my-app/README.md,9\4\94b4196165e22c08c4aa950a965307bce71bc059
+P
+ project/my-app/package-lock.json,f\0\f0ebe1e70c05cf047d06f03326994cbe2ba3b64e
+i
+9project/my-app/src/components/employee/DetailEmployee.jsx,0\8\086f815944313cdd06a16d913fd18a29980b3052
+d
+4project/my-app/src/components/dashboard/dashboard.js,5\6\56155f2b8f2915d00b3432d1402411d5f9f58e19
+`
+0project/my-app/src/components/dashboard/index.js,8\8\884b4e4ee29c0ec9ae4b95adadf7fc7581571f00
+`
+0project/my-app/src/components/dashboard/Index.js,5\1\5146bb16dc4c5e04b9ff3b88767372cc15021d4c
+h
+8project/my-app/src/components/dashboard/index-style.scss,2\a\2aa34864cacb94b70b41e074a9c633f572893fe6
+J
+project/my-app/src/App.css,4\7\474ba3dac845f7c67f68969cf136e049dd909692
+g
+7project/my-app/src/components/dashboard/index-style.css,8\2\82109958fb18384cc8e1f630b47c6876f4804cde

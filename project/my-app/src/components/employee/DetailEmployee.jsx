@@ -1,36 +1,23 @@
-import {useParams} from "react-router";
 import {useEffect, useState} from "react";
-import{selectById} from '../../service/EmployeeService'
-import styles from "../EmployeeComponents/style.module.scss"
-function DetailEmployee(props){
-    const{id} = useParams();
-    const [employee, setEmployee]= useState()
-    useEffect(()=>{
-        getEmployee(id).then();
-        }
+import {useParams} from "react-router-dom";
+import{selectById} from "../../service/EmployeeService"
 
-    )
-    const getEmployee = async()=>{
-        const temp = await selectById(id);
+
+function DetailEmployee(props){
+    const{id}= useParams();
+    const[employee, setEmployee] = useState([]);
+    useEffect(() => {
+        getEmployeeById().then();
+    },id );
+    const getEmployeeById = async()=>{
+        let temp = await selectById(id);
         setEmployee(temp);
     }
-    if(!employee) return null;
     return(
         <>
-            <div className={styles.detail}>
-                <div className={styles.employeeTitleContainer}>
-                    <h1 className={styles.employeeTitle}>Chi tiết nhân viên</h1>
-                </div>
-                <div className={styles.employeeContainer}>
-                    <div className={styles.employeeShow}>
-                        <div className={styles.employeeShowTop}></div>
-                    </div>
-
-                </div>
-            </div>
 
         </>
     )
-
 }
+
 export default DetailEmployee;
