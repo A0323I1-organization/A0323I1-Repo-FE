@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import * as seatService from "../../service/seat/SeatService";
 import * as movieService from "../../service/movieservice/MovieService";
 import * as paymentService from "../../service/payment/Payment";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {format} from "date-fns";
 import ReactLoading from "react-loading";
 import axios from "axios";
@@ -19,9 +19,9 @@ function Seat() {
     const [isLoading, setIsLoading] = useState(true);
     const [selectedSeat, setSelectedSeat] = useState([]);
     const [movie, setMovie] = useState({});
-    const formatTime = showTime.slice(0, 5);
+    const formatTime = showTime.slice(0,5);
     const [total, setTotal] = useState(0);
-    let seatId = ""
+
 
     useEffect(() => {
         if (listSeats.length === 0) {
@@ -73,7 +73,6 @@ function Seat() {
                 e.target.style.backgroundColor = "#fa7406"
             }
         } else if (selectedSeat.includes(seat)) {
-            console.log("remove")
             setSelectedSeat(selectedSeat.filter(item => item !== seat));
             setTotal(total - seat.typeSeatPrice);
             e.target.style.backgroundColor = ""
@@ -87,14 +86,18 @@ function Seat() {
 
     const ChangePage = async (e) => {
         let listId = [];
-        for (let i = 0; i < selectedSeat.length; i++) {
-            listId.push(selectedSeat[i].seatId);
+        if (selectedSeat.length > 0) {
+            for (let i = 0; i < selectedSeat.length; i++) {
+                listId.push(selectedSeat[i].seatId);
+            }
+            // await seatService.bookSeat(listId);
+            const url = await paymentService.payment(total,listId);
+            localStorage.setItem('listId', JSON.stringify(listId));
+            window.location.href = url;
+        } else {
+            alert("Vui Lòng Chọn Ghế")
         }
-        // await seatService.bookSeat(listId);
-        const url = await paymentService.payment(total,listId);
 
-        localStorage.setItem('listId', JSON.stringify(listId));
-        window.location.href = url;
 
     }
 
@@ -198,7 +201,7 @@ function Seat() {
 
                                     </p>
                                     <p>
-                                        <span>Suất chiếu: {formatTime}-</span>
+                                        <span>Suất chiếu: {formatTime}/</span>
                                         <span>{showDate}</span>
                                     </p>
                                     <hr className="dotted-line"/>
@@ -216,7 +219,12 @@ function Seat() {
                                         <span>{total} </span>
                                     </p>
                                     <div>
-                                        <button className="btn btn-primary">Quay Lại</button>
+                                        <button className="btn btn-primary">
+                                            <Link to={`/booking/${movieId}`}
+                                            style={{color:"white", textDecoration:"none"}}>
+                                                Quay Lại
+                                            </Link>
+                                        </button>
                                         <button className="btn btn-primary" onClick={(e) => ChangePage(e)}>Tiếp Tục
                                         </button>
                                     </div>

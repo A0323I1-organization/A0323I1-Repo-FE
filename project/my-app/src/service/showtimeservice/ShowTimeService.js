@@ -9,9 +9,9 @@ export const findAllShowDateByMovieId = async  (movieId) => {
     }
 }
 
-export const findAllShowTime = async (date) => {
+export const findAllShowTime = async (date, movieId) => {
     try {
-        const res = await axios.get(`http://localhost:8080/api/find-all-show-time/${date}`)
+        const res = await axios.get(`http://localhost:8080/api/find-all-show-time/${date}/${movieId}`)
         return res.data;
     } catch (err) {
         console.log(err);
