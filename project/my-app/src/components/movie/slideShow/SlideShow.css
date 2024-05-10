@@ -6,7 +6,11 @@
     aspect-ratio: 3/1;
     position: relative;
     overflow: hidden;
+<<<<<<< HEAD
     margin-bottom: 30px;
+=======
+    margin-bottom: 60px;
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
 }
 
 .slider .list {

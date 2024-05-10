@@ -133,4 +133,18 @@
 
 }
 
+<<<<<<< HEAD
+=======
+@media (max-width: 992px) {
+    .menu-right {
+    width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-right {
+    width: 100%;
+    }
+}
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
 /*header*/

@@ -1,4 +1,5 @@
 import axios from "axios";
+<<<<<<< HEAD
     export  const findAllTicket =  async () =>{
         try {
         const  temp = await axios.get("http://localhost:8080/api/ticket/findAllTicket");
@@ -46,4 +47,14 @@ export const findAllTicketPage = async (page) => {
         }catch (e) {
             console.log(e);
         }
+=======
+
+export const ticket = async (vnp_PayDate) => {
+    try {
+        const res =await axios.get(`http://localhost:8080/api/ticket/${vnp_PayDate}`);
+        return res.data;
+    }catch (err) {
+        console.log(err);
+    }
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
 }

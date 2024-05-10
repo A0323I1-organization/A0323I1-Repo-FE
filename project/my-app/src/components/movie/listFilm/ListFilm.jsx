@@ -4,8 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesRight, faTicket } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.css";
 import { useEffect, useState, useRef } from "react";
+<<<<<<< HEAD
 import { NavLink } from "react-router-dom";
 import {findAllMovieIsShowing, findAllUpcomingMovie} from "../../../service/movie/MovieService";
+=======
+import {findAllUpcomingMovie,findAllMovieIsShowing } from "../../../service/movieservice/MovieService";
+import { NavLink } from "react-router-dom";
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
 
 function ListFilm() {
 
@@ -102,7 +107,11 @@ function ListFilm() {
                             </li>
               ))}
           </ul>
+<<<<<<< HEAD
           {Object.keys(movies).length == 4 && status ?(
+=======
+          {Object.keys(movies).length === 4 && status ?(
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
           <div className="row" style={{ margin: "20px 0" }}>
             <div className="col-md-12 d-flex justify-content-center">
               <NavLink to={'/galaxy/phim-dang-chieu'} className="btn btn-outline-primary">
@@ -112,7 +121,11 @@ function ListFilm() {
           </div>
           ) : <></>}
           
+<<<<<<< HEAD
           {Object.keys(movies).length == 1 && !status ?(
+=======
+          {Object.keys(movies).length === 4 && !status ?(
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
           <div className="row" style={{ margin: "20px 0" }}>
             <div className="col-md-12 d-flex justify-content-center">
               <NavLink to={'/galaxy/phim-sap-chieu'} className="btn btn-outline-primary">

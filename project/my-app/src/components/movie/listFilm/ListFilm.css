@@ -6,7 +6,11 @@
 }
 
 .title-list .title li {
+<<<<<<< HEAD
     margin-right: 4%;
+=======
+    margin-right: 3%;
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
     display: inline-block;
     position: relative;
 }
@@ -20,6 +24,11 @@
 
 .title-list .title .title-line {
     cursor: pointer;
+<<<<<<< HEAD
+=======
+    font-weight: 600;
+    color: #9d9d9d;
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
 }
 
 .title-list .title .title-line:hover {
