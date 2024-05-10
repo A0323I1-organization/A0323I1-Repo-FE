@@ -6,7 +6,15 @@ import styles from "../searchList/SearchList.module.scss";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import queryString from "query-string";
+<<<<<<< HEAD
 import { findAllMovieByMovieName } from "../../../service/movieservice/MovieService";
+=======
+<<<<<<< HEAD
+import {findAllMovieByMovieName} from "../../../service/movie/MovieService";
+=======
+import { findAllMovieByMovieName } from "../../../service/movieservice/MovieService";
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
 
 function SearchList() {
   const navigate = useNavigate();

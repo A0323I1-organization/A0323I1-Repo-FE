@@ -1,4 +1,22 @@
+<<<<<<< HEAD
 * {
+=======
+<<<<<<< HEAD
+* {
+<<<<<<< HEAD
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: 0;
+  list-style: none;
+  appearance: none;
+}
+
+.container2 {
+  margin: 0 5%;
+=======
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,6 +28,10 @@
 
 .container2 {
     margin: 0 5%;
+<<<<<<< HEAD
+=======
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
 }
 
 body {
@@ -23,5 +45,21 @@ body {
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+<<<<<<< HEAD
+=======
+=======
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+>>>>>>> parent of 22549da (10/05)
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
     monospace;
 }

@@ -8,10 +8,23 @@ import {
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import "bootstrap/dist/css/bootstrap.css";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { useLocation, useNavigate } from "react-router-dom";
+import {findAllMovieIsShowing, findAllUpcomingMovie} from "../../../service/movie/MovieService";
+=======
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
 import {findAllMovieIsShowing, findAllUpcomingMovie } from "../../../service/movieservice/MovieService";
 import "bootstrap/dist/css/bootstrap.css";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
+<<<<<<< HEAD
+=======
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
 
 function HeaderNew() {
   const [movieIsComing, setMovieIsComing] = useState([]);
@@ -101,14 +114,30 @@ function HeaderNew() {
       <header>
         <div className="container">
           <nav className={styles.navHeader}>
+<<<<<<< HEAD
             <NavLink to={'/'}>
+=======
+<<<<<<< HEAD
+            <a href="/">
+=======
+            <NavLink to={'/'}>
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
               <img
                 src="https://www.galaxycine.vn/_next/static/media/galaxy-logo-mobile.074abeac.png"
                 alt="galaxy cinema"
                 height="60px"
                 width="115px"
               />
+<<<<<<< HEAD
             </NavLink>
+=======
+<<<<<<< HEAD
+            </a>
+=======
+            </NavLink>
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
             <div>
               <div className={styles.choose}>
                 <ul id={styles.nav}>
@@ -301,10 +330,23 @@ function HeaderNew() {
         <div>
           <div className={styles.imgResponsive}>
             <img
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+              src="https://scontent.fdad1-4.fna.fbcdn.net/v/t1.6435-9/60493220_2727687037245858_4681446895883649024_n.png?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=IQta9GJxB34AX9jKOQt&_nc_ht=scontent.fdad1-4.fna&cb_e2o_trans=t&oh=00_AfDIiOAL8aQzxMBnQl_NQzKhwR18N4EwMBV_Lm6Cx02PXw&oe=66223EB8"
+              alt="galaxy cinema"
+              height="150px"
+              width="175px"
+=======
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
               src="https://www.galaxycine.vn/_next/static/media/galaxy-logo-mobile.074abeac.png"
               alt="galaxy cinema"
               height="80px"
               width="140px"
+<<<<<<< HEAD
+=======
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
             />
           </div>
           {isShow&&<div className={styles.searchInput}>

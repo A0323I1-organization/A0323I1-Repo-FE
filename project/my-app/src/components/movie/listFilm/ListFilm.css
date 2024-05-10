@@ -6,7 +6,15 @@
 }
 
 .title-list .title li {
+<<<<<<< HEAD
     margin-right: 3%;
+=======
+<<<<<<< HEAD
+    margin-right: 4%;
+=======
+    margin-right: 3%;
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
     display: inline-block;
     position: relative;
 }
@@ -20,8 +28,16 @@
 
 .title-list .title .title-line {
     cursor: pointer;
+<<<<<<< HEAD
     font-weight: 600;
     color: #9d9d9d;
+=======
+<<<<<<< HEAD
+=======
+    font-weight: 600;
+    color: #9d9d9d;
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
 }
 
 .title-list .title .title-line:hover {

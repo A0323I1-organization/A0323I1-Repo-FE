@@ -41,6 +41,10 @@ export const findAllMovieByMovieName = async (nameMovie) => {
 export const findAllMovieIsShowing = async () => {
     try {
         let temp = await axios.get("http://localhost:8080/api/showing");
+<<<<<<< HEAD
+=======
+        console.log(temp.data)
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
         return temp.data;
     } catch (e) {
         console.log(e);

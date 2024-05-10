@@ -1,11 +1,25 @@
 import { useEffect, useState } from "react";
 import styles from "../upcomingMovie/UpcomingMovie.module.scss";
+<<<<<<< HEAD
 import { findAllUpcomingMovie } from "../../../service/movieservice/MovieService";
+=======
+<<<<<<< HEAD
+=======
+import { findAllUpcomingMovie } from "../../../service/movieservice/MovieService";
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTicket } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, useNavigate } from "react-router-dom";
 import HeaderNew from "../headerNew/HeaderNew";
 import Footer from "../footer/Footer";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import {findAllUpcomingMovie} from "../../../service/movie/MovieService";
+=======
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
 
 function UpcomingMovie() {
   const [upcoming, setUpcoming] = useState([]);

@@ -4,8 +4,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesRight, faTicket } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.css";
 import { useEffect, useState, useRef } from "react";
+<<<<<<< HEAD
 import {findAllUpcomingMovie,findAllMovieIsShowing } from "../../../service/movieservice/MovieService";
 import { NavLink } from "react-router-dom";
+=======
+<<<<<<< HEAD
+import { NavLink } from "react-router-dom";
+import {findAllMovieIsShowing, findAllUpcomingMovie} from "../../../service/movie/MovieService";
+=======
+import {findAllUpcomingMovie,findAllMovieIsShowing } from "../../../service/movieservice/MovieService";
+import { NavLink } from "react-router-dom";
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
 
 function ListFilm() {
 
@@ -102,7 +112,15 @@ function ListFilm() {
                             </li>
               ))}
           </ul>
+<<<<<<< HEAD
           {Object.keys(movies).length === 4 && status ?(
+=======
+<<<<<<< HEAD
+          {Object.keys(movies).length == 4 && status ?(
+=======
+          {Object.keys(movies).length === 4 && status ?(
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
           <div className="row" style={{ margin: "20px 0" }}>
             <div className="col-md-12 d-flex justify-content-center">
               <NavLink to={'/galaxy/phim-dang-chieu'} className="btn btn-outline-primary">
@@ -112,7 +130,15 @@ function ListFilm() {
           </div>
           ) : <></>}
           
+<<<<<<< HEAD
           {Object.keys(movies).length === 4 && !status ?(
+=======
+<<<<<<< HEAD
+          {Object.keys(movies).length == 1 && !status ?(
+=======
+          {Object.keys(movies).length === 4 && !status ?(
+>>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
           <div className="row" style={{ margin: "20px 0" }}>
             <div className="col-md-12 d-flex justify-content-center">
               <NavLink to={'/galaxy/phim-sap-chieu'} className="btn btn-outline-primary">
@@ -123,7 +149,10 @@ function ListFilm() {
           ) : <></>}
         </div>
       </div>
+<<<<<<< HEAD
       <div className={styles.line}></div>
+=======
+>>>>>>> f70506fe314bd335c11a30c6d3fc89cd985ea169
     </>
   );
 }
