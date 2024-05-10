@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 
 import './App.css';
+<<<<<<< HEAD
 import 'react-toastify/dist/ReactToastify.css';
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import React from "react";
@@ -57,6 +58,15 @@ function App() {
 
     );
 >>>>>>> 4d2a04845e712049722fcc768a196749b4a8663d
+=======
+import 'react-toastify/dist/ReactToastify.css';
+function App() {
+  return (
+    <>
+
+    </>
+  );
+>>>>>>> parent of 22549da (10/05)
 }
 
 export default App;

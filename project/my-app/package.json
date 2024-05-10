@@ -19,11 +19,15 @@
     "date-fns": "^3.6.0",
     "formilk": "^0.21.0",
     "react": "^18.2.0",
+<<<<<<< HEAD
     "query-string": "^9.0.0",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-loading": "^2.0.3",
     "react-slick": "^0.30.2",
+=======
+    "react-dom": "^18.2.0",
+>>>>>>> parent of 22549da (10/05)
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
     "react-toastify": "^10.0.5",
