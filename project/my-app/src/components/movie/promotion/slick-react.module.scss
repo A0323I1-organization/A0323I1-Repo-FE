@@ -1,0 +1,48 @@
+.title {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.title span {
+    border-left: 4px solid #034ea2;
+    margin-right: 5px;
+    height: 20px;
+    transform: translateY(5px);
+}
+
+.title h4 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.card {
+    overflow: hidden;
+    height: auto;
+    border: none;
+    position: relative;
+}
+
+.cardTop a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardTop > a >img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+
+}
+
+.cardBottom a {
+    color: #4a4a4a;
+    text-decoration: none;
+}
+
+.cardBottom h5 {
+    padding-top: 3px;
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+}

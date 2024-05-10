@@ -1,0 +1,147 @@
+
+#check {
+    display: none;
+}
+
+#write_input {
+    width: 200px;
+    transition: width 0.5s ease;
+    border: none;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0); 
+    outline: none;
+    border-radius: 20px;
+    position: absolute;
+    right: 17%;
+    padding: 2px 0 2px 20px;
+} 
+
+#write_input:focus {
+    display: block;
+    width: 450px; 
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0); 
+} 
+
+.open-menu, .close-menu {
+    position: absolute;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+ .my-element {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+}
+
+.open-menu {
+    top: 40px;
+    right: 80px;
+    transform: translateY(-50%);
+}
+
+.close-menu {
+    top: 20px;
+    right: 20px;
+} 
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: lightgrey;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 5px;
+}
+
+.menu-right {
+    display: none;
+}
+
+
+
+@media (max-width: 1200px) {
+
+    .menu-right {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+    } 
+
+    .open-menu, .close-menu {
+        display: block;
+    }
+
+    .menu-right.active {
+        right: 0;
+    }
+
+    .my-element.active {
+        display: block;
+    }
+
+    .name-list {
+        cursor: pointer;
+    }
+
+    .left {
+        width: 80%;
+        height: 140px;
+        overflow-y: scroll;
+    }
+
+    .left li a {
+        white-space: nowrap;
+    }
+ 
+    .dropdown-list-right {
+        display: none;
+    }
+
+    .dropdown-list-right.active {
+        display: block;
+    }
+
+    .dropdown-list-right li {
+        list-style-type: none;
+        width: fit-content;
+        margin-bottom: 10px;
+    }
+
+    .dropdown-list-right li a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .dropdown-list-right li a:focus {
+        color: orange;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .menu-right {
+    width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-right {
+    width: 100%;
+    }
+}
+/*header*/

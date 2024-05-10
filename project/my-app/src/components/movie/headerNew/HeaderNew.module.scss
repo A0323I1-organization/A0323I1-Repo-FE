@@ -1,0 +1,293 @@
+/*header*/
+
+.navHeader {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.choose {
+    display: flex;
+    padding: 20px 20px;
+    margin-left: 80px;
+}
+
+.choose input {
+    display: none;
+}
+
+#nav {
+    font-size: 1rem;
+}
+
+#nav .navChoose {
+    display: inline-block;
+    position: relative;
+    padding: 0 13px 10px;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+#nav .navChoose .titleListFilm {
+    display: none;
+    width: 673px;
+    position: absolute;
+    list-style-type: none;
+    background-color: #fff;
+    padding: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transform: translate(-2%,6px);
+    z-index: 1;
+}
+
+.searchLogin .clickUser {
+    display: none;
+}
+
+#nav .navChoose .titleListFilm .titleSubnav {
+    padding-top: 10px;
+    transition: 0.5s;
+    display: flex;
+}
+
+#nav .navChoose .titleListFilm .titleSubnav span {
+    border-left: 5px solid orange;
+    padding-right: 5px;
+}
+
+#nav .navChoose .titleListFilm .titleSubnav  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #0000008f;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+#nav .navChoose .titleListFilm .titleSubnav  a:hover {
+    color: orange;
+    transition: 0.3s;
+}
+
+#nav .navChoose .titleListFilm ul.subnavVideo {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#nav .navChoose .titleListFilm ul.subnavVideo li {
+    padding: 15px 0;
+    transition: 0.5s;
+}
+
+#nav .navChoose .titleListFilm ul.subnavVideo a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+#nav .navChoose .titleListFilm ul.subnavVideo img {
+    height: auto;
+    max-width: 150px;
+}
+
+#nav .navChoose .titleListFilm ul.subnavVideo li .headerImg:hover{
+    filter: brightness(60%);
+    transition: 0.5s;
+}
+
+#nav .navChoose .subnav {
+    list-style-type: none;
+}
+
+#nav .navChoose .subnav li a {
+    text-decoration: none;
+    color: black;
+    white-space: nowrap;
+}
+
+#nav .navChoose .subnav li:hover a {
+    color: orange;
+}
+
+@media (min-width: 1201px) {
+
+    #nav .navChoose .subnav {
+        display: none;
+        min-width: 160px;
+        position: absolute;
+        list-style-type: none;
+        background-color: #fff;
+        padding: 0;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        transform: translate(-18%,6px);
+        z-index: 1;
+    }
+
+    #nav .navChoose .subnav li {
+        display: block;
+        line-height: 30px;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    #nav .navChoose:hover .titleListFilm {
+        display: block;
+    }
+
+    #nav .navChoose:hover .subnav {
+        display: block;
+        color: black;
+    }
+
+    #nav .navChoose:hover {
+        cursor: pointer;
+        color: orange;
+
+    }
+
+    #nav .navChoose .subnav li:hover {
+        color: orange;
+        border-left: 4px solid orange;
+        transition: 0.2s;
+        background-color: #fee7d9;
+    }
+
+}
+
+.navRight {
+    margin-left: auto;
+}
+
+.searchLogin {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.searchLogin .search {
+    cursor: pointer;
+    color: #777777;
+}
+
+.searchLogin #clickLogin {
+    text-decoration: none;
+    color: #93877f;
+    margin: 0 20px;
+    white-space: nowrap;
+}
+
+.searchLogin #clickLogin:hover {
+    color: orange;
+}
+
+.left {
+    width: 250px;
+    height: 150px;
+    overflow-y: scroll;
+}
+
+@media (max-width: 1200px) {
+    .navHeader {
+        padding: 15px;
+    }
+
+    #nav .navChoose {
+        display: none;
+    }
+
+    #nav .buyImg {
+        display: none;
+    }
+
+    .clickSearch {
+        display: none;
+    }
+
+    .searchLogin .clickUser {
+        display: block;
+        transform: scale(1.3);
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .searchLogin #clickLogin {
+        margin: 0 10px;
+    }
+
+    .searchLogin .searchLogin {
+        cursor: pointer;
+    }
+
+    .searchLogin:hover #clickLogin {
+        color: orange;
+    }
+
+    .searchLogin .searchLogin {
+        position: absolute;
+        top: 40px;
+        right: 120px;
+        transform: translateY(-50%);
+    }
+
+    .search {
+        display: none;
+    }
+
+    .clickImg {
+        display: none;
+    }
+
+    .imgResponsive {
+        display: block;
+        text-align: center;
+        margin-top: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .searchInput {
+        display: flex;
+        margin-bottom: 20px;
+        width: 100%;
+        padding: 0 30px;
+    }
+
+    .searchInput .formSearch {
+        display: block;
+        width: 100%;
+        height: 40px;
+        border-radius: 10px;
+        padding-left: 35px;
+        border: 1px solid #e1e1e1;
+    }
+
+    .searchInput .formSearch:focus {
+        outline: 1px solid #363949;
+
+    }
+
+    .searchInput .searchButton {
+        color: #6e6c6c;
+        margin-left: -98%;
+        transform: translateY(10px);
+    }
+
+    .navChoose {
+        margin-bottom: 10px;
+    }
+
+    .menuListRight {
+        padding: 0 30px;
+        margin-top: 20px;
+    }
+
+    .menuListRight div{
+        margin-bottom: 5px;
+    }
+
+}
+
+.search.action {
+    display: none;
+}
