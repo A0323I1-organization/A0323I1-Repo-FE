@@ -1,18 +1,22 @@
 import React from "react";
 import './RegisterForm.css';
-import { FaUser } from "react-icons/fa";
+import { FaUser,FaHome ,FaPhone,FaAddressCard,FaUserCircle } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
-import { FaHome } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { FaPhone } from "react-icons/fa";
-import { FaAddressCard } from "react-icons/fa";
-import { FaUserCircle } from "react-icons/fa";
-
 
 const RegisterForm = () => {
+    // Hàm xử lý khi form được gửi
+    const handleSubmit = (event) => {
+        // Ngăn chặn hành vi mặc định của form (không gửi form)
+        event.preventDefault();
+        // Chuyển hướng đến đường dẫn /admin-page
+        window.location.href = "/admin-page";
+    };
+
     return (
         <div className='wrapper'>
-            <form action="">
+            {/* Thêm sự kiện onSubmit vào thẻ <form> */}
+            <form onSubmit={handleSubmit}>
                 <h1>Register Form</h1>
 
                 <div className="input-box">
@@ -79,12 +83,11 @@ const RegisterForm = () => {
                     </label>
                 </div>
 
-                <button className="submit">Register</button>
+                {/* Thay đổi thành button type="submit" */}
+                <button type="submit" className="submit">Register</button>
 
                 <div className="register-link">
-                    <p>Have an account ?
-                        <a href="#">Login</a>
-                    </p>
+                    <p>Have an account ? Register</p>
                 </div>
             </form>
         </div>

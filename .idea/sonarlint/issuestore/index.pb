@@ -9,8 +9,6 @@ K
 project/my-app/package.json,9\8\98ec96251740575f58be150539e05f3408e607fe
 I
 project/my-app/src/App.js,2\4\2465857f0bd9466c8255d9dd5a47cfb2bb4d8e22
-M
-project/my-app/src/index.html,0\2\02689401f8345ab9abe59f4c7c3e536102f091af
 L
 project/my-app/src/index.css,f\d\fdc03d8eb80813a82f1ac3eabcfce06441f00ca3
 g
@@ -19,8 +17,6 @@ g
 7project/my-app/src/components/register/RegisterForm.css,c\1\c169c8c68b059e81b09a37a0bfeb1cdc17b5d0e7
 K
 project/my-app/src/index.js,a\8\a814a5a4daca077d37ab21455a9e080374df629d
-b
-2project/my-app/src/components/customer/Customer.js,0\f\0f66c8c2121bf2482ca1be8d71960d66081193db
 `
 0project/my-app/src/components/layout/NotFound.js,e\5\e543fd7839f813768ceda0e833267d004bca6615
 _
@@ -31,9 +27,15 @@ _
 ,project/my-app/src/components/data/data.json,3\d\3d7e0aad85fcd1af1ce7fed1a821efa099ce599e
 h
 8project/my-app/src/components/service/CustomerService.js,5\3\5371184d3d865dc2452cd11609ed17ec34385b1c
-h
-8project/my-app/src/components/customer/CreateCustomer.js,f\9\f914abaa922f7374df067daf21c6d97da7d7a1b0
 f
 6project/my-app/src/components/customer/EditCustomer.js,8\a\8a05e3062e67f86344a7e3f2fea77afc19c8541e
+^
+.project/my-app/src/components/common/Search.js,6\6\66623cf13fd7142ecf96d40149747b82db496e56
+^
+.project/my-app/src/components/common/NavBar.js,5\9\59bd4ead414af63841b5540ce9ac6e845c83c6a8
+e
+5project/my-app/src/components/customer/AddCustomer.js,3\a\3a9c1282e8e26a5aad9a443a6bad3803c20aba3e
 f
-6project/my-app/src/components/customer/ListCustomer.js,e\2\e26ce8fcc1646b2ed332931f3cf94adc8e620ca9
+6project/my-app/src/components/customer/CustomerView.js,6\5\65970d7309ed1ec9b0309bace7718d1be577037a
+h
+8project/my-app/src/components/customer/CustomerPofile.js,9\9\99537931206a3eab312ca96386c5a76e664c27c9
