@@ -2,23 +2,18 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../dasboard/Dasboard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faBars,
     faX,
     faMagnifyingGlassChart,
     faEnvelope,
     faReceipt,
     faCircleExclamation,
     faGear,
-    faArrowRightFromBracket,
-    faSun,
-    faMoon,
-    faPlus,
+    faArrowRightFromBracket
 } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import React from "react";
 import StatisticDashBoard from "../statistics/StatisticDashBoard";
-import logoBrand from '../../assets/img/brand.jpg'
-import ManagerTicket from "../ticket/ManageTicket";
+import logoBrand from '../../assets/img/brand.jpg';
 
 export default function Dasboard() {
 
@@ -91,46 +86,6 @@ export default function Dasboard() {
                 </aside>
 
                        <StatisticDashBoard/>
-                {/*    aside section end*/}
-
-                {/*    main section start*/}
-                <ManagerTicket/>
-                {/*    main section end*/}
-
-
-
-                {/*    right section start*/}
-                <div className="right">
-                    <div className="top-manager">
-                        <button id="menu_bar">
-                            <div className="theme-icon">
-                                <FontAwesomeIcon icon={faBars} />
-                            </div>
-                        </button>
-                        <div className="theme-toggle">
-                            <div className="theme-icon">
-                                <FontAwesomeIcon icon={faSun} className="active" />
-                            </div>
-                            <div className="theme-icon">
-                                <FontAwesomeIcon icon={faMoon} />
-                            </div>
-                        </div>
-                        <div className="profile">
-                            <div className="info">
-                                <p>
-                                    <b>Babar</b>
-                                </p>
-                                <p>Admin</p>
-                                <small className="text-muted" />
-                            </div>
-                            <div className="profile-photo">
-                                <img src="" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    {/*        end top*/}
-                </div>
-                {/*    right section end*/}
             </div>
         </>
     );

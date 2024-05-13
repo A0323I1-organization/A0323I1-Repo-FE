@@ -23,7 +23,8 @@ export default function MovieSaleChart() {
     activePage: 1,
     totalElement: 0,
     sortBy: '',
-    sortDirection: true
+    sortDirection: true,
+    filterDate: ''
   });
   const itemsPerPage = control.limit;
   const [currentPage, setCurrentPage] = useState(0);
@@ -42,17 +43,28 @@ export default function MovieSaleChart() {
     }));
     setCurrentPage(0);
   };
+  const listDropDate = [
+    {value: 'date', label: 'date'},
+    {value: 'month', label: 'month'},
+    {value: 'year', label: 'year'},
+  ];
   const listDrop = [
     {value: 'movie_id', label: 'Id'},
     {value: 'movieName', label: 'Name'},
     {value: 'totalPriceTicket', label: 'Price'},
   ];
-  const handleChangeDrop = (selectedOption) => {
+  const handleChangeDropSort = (selectedOption) => {
     setControl((prev) => ({
       ...prev,
       sortBy: selectedOption.value,
     }));
     setCurrentPage(0);
+  };
+  const handleChangeDropDate = (selectedOption) => {
+    setControl((prev) => ({
+      ...prev,
+      filterDate: selectedOption.value,
+    }));
   };
   const handleChangeSort = (e) => {
     setControl((prev) => ({
@@ -64,9 +76,10 @@ export default function MovieSaleChart() {
   useEffect(() => {
     getPaging();
     if (movieAll !== null) {
-      getAll();
+      getAllFilterDate();
     }
-  }, [currentPage, itemsPerPage,control.sortBy,control.sortDirection]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPage, itemsPerPage,control.sortBy,control.sortDirection,control.filterDate]);
   
   const getPaging = async () => {
     try {
@@ -87,10 +100,10 @@ export default function MovieSaleChart() {
     }
   };
 
-  const getAll = async () => {
+  const getAllFilterDate = async () => {
     try {
-      const temp = await dashBoard.findAllMovieSalePaging(0, 100, "", "");
-      setMovieAll(temp.content);
+      const temp = await dashBoard.findAllMovieSaleDate(control.filterDate);
+      setMovieAll(temp);
     } catch (err) {
       console.log(err);
     }
@@ -141,8 +154,8 @@ export default function MovieSaleChart() {
 
   return (
     <>
+      <Dropdown options={listDropDate} onChange={handleChangeDropDate} placeholder="Choose type" />
       <Chart type="line" series={series} options={options} height={350}></Chart>
-
       <Button onClick={() => setLgShow(true)}>Show all</Button>
 
       <Modal
@@ -160,7 +173,7 @@ export default function MovieSaleChart() {
           </Modal.Title>
           <Button className="btn btn-secondary" onClick={() => handleChangeSort(true)}><img src={Asc} alt="asc"/></Button>
           <Button className="btn btn-secondary" onClick={() => handleChangeSort(false)}><img src={Desc} alt="desc"/></Button>
-          <Dropdown options={listDrop} onChange={handleChangeDrop} placeholder="Sortby" />
+          <Dropdown options={listDrop} onChange={handleChangeDropSort} placeholder="Sortby" />
           
         </Modal.Header>
         

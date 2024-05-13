@@ -22,7 +22,8 @@ export default function MovieTypeChart() {
     activePage: 1,
     totalElement: 0,
     sortBy: '',
-    sortDirection: true
+    sortDirection: true,
+    filterDate: ''
   });
   const optionSelect = [
     { value: 5, label: 5 },
@@ -32,6 +33,11 @@ export default function MovieTypeChart() {
   const listDrop = [
     {value: 'movieType', label: 'Type Name'},
     {value: 'movieTypeTotalTicket', label: 'Ticket'},
+  ];
+  const listDropDate = [
+    {value: 'date', label: 'date'},
+    {value: 'month', label: 'month'},
+    {value: 'year', label: 'year'},
   ];
   const handleChangeOption = (selectedOption) => {
     setControl((prev) => ({
@@ -46,6 +52,12 @@ export default function MovieTypeChart() {
       sortBy: selectedOption.value,
     }));
     setCurrentPage(0);
+  };
+  const handleChangeDropDate = (selectedOption) => {
+    setControl((prev) => ({
+      ...prev,
+      filterDate: selectedOption.value,
+    }));
   };
   const handleChangeSort = (e) => {
     setControl((prev) => ({
@@ -81,13 +93,14 @@ export default function MovieTypeChart() {
   useEffect(() => {
     getPaging();
     if (movieTypeAll !== null) {
-      getAll();   
+      getAllFilterDate();   
     }
-  },  [currentPage, itemsPerPage,control.sortBy,control.sortDirection]);
-  const getAll = async () => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },  [currentPage, itemsPerPage,control.sortBy,control.sortDirection,control.filterDate]);
+  const getAllFilterDate = async () => {
     try {
-      const temp = await dashBoard.findAllTopMovieTypePaging(0, 100, "","");
-      setMovieTypeAll(temp.content);
+      const temp = await dashBoard.findAllTopMovieTypeDate(control.filterDate);
+      setMovieTypeAll(temp);
     } catch (err) {
       console.log(err);
     }
@@ -144,6 +157,7 @@ export default function MovieTypeChart() {
   }
   return (
     <>
+      <Dropdown options={listDropDate} onChange={handleChangeDropDate} placeholder="Choose type" />
       <Chart type="bar" series={series} options={options} width={'90%'}></Chart>
       <Button onClick={() => setLgShow(true)}>Show all</Button>
       <Modal

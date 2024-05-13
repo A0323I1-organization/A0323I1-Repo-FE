@@ -22,7 +22,8 @@ export default function ShowTimeChart() {
     activePage: 1,
     totalElement: 0,
     sortBy: '',
-    sortDirection: true
+    sortDirection: true,
+    filterDate: ''
   });
   const optionSelect = [
     { value: 5, label: 5 },
@@ -32,6 +33,11 @@ export default function ShowTimeChart() {
   const listDrop = [
     {value: 'showTimeDetail', label: 'Time'},
     {value: 'showTimeTotalTicket', label: 'Ticket'},
+  ];
+  const listDropDate = [
+    {value: 'date', label: 'date'},
+    {value: 'month', label: 'month'},
+    {value: 'year', label: 'year'},
   ];
   const handleChangeOption = (selectedOption) => {
     setControl((prev) => ({
@@ -53,6 +59,12 @@ export default function ShowTimeChart() {
       sortDirection: e,
     }));
   };
+  const handleChangeDropDate = (selectedOption) => {
+    setControl((prev) => ({
+      ...prev,
+      filterDate: selectedOption.value,
+    }));
+  };
   const itemsPerPage = control.limit;
   const [currentPage, setCurrentPage] = useState(0);
   const handleChange = async ({ selected }) => {
@@ -62,10 +74,10 @@ export default function ShowTimeChart() {
   useEffect(() => {
     getPaging();
     if (showTimeAll !== null) {
-      getAll();
+      getAllFilterDate();
     }
     // eslint-disable-next-line
-  }, [currentPage, itemsPerPage,control.sortBy,control.sortDirection]);
+  }, [currentPage, itemsPerPage,control.sortBy,control.sortDirection,control.filterDate]);
 
   const getPaging = async () => {
     try {
@@ -86,10 +98,10 @@ export default function ShowTimeChart() {
     }
   };
 
-  const getAll = async () => {
+  const getAllFilterDate = async () => {
     try {
-      const temp = await dashBoard.findAllTopShowTimePaging(0, 100, "","");
-      setShowTimeAll(temp.content);
+      const temp = await dashBoard.findAllTopShowTimeDate(control.filterDate);
+      setShowTimeAll(temp);
     } catch (err) {
       console.log(err);
     }
@@ -112,7 +124,8 @@ export default function ShowTimeChart() {
       },
   }
   return (
-    <>
+    <> 
+      <Dropdown options={listDropDate} onChange={handleChangeDropDate} placeholder="Choose type" />
       <Chart type="line" series={series} options={options} width={'90%'} ></Chart>
       <Button onClick={() => setLgShow(true)}>Show all</Button>
       <Modal
