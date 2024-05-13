@@ -37,7 +37,7 @@
 }
 
 
-body {
+.total {
     font-family: 'Poppins', sans-serif;
     width: 100vw;
     height: 100vh;
@@ -54,39 +54,23 @@ body {
     grid-template-columns: 14rem auto;
     margin: 0 auto;
 }
+.nav{
+    color: var(--clr-dark);
+    text-decoration: none;
+}
 
 a {
-    color: var(--clr-dark);
+    text-decoration: none;
 }
 
-h1 {
-    font-weight: 800;
-    font-size: 1.8rem;
-}
-
-h2 {
+.title{
     font-size: 1.4rem;
 }
-
-h3 {
+.t3{
     font-size: 0.87rem;
 }
 
-h4 {
-    font-size: 0.8rem;
-}
 
-h5 {
-    font-size: 0.77rem;
-}
-
-small {
-    font-size: 0.75rem;
-}
-a{
-    text-decoration: none;
-
-}
 .profile-photo img {
     width: 2.8rem;
     height: 2.8rem;
@@ -94,13 +78,6 @@ a{
     overflow: hidden;
 }
 
-p {
-    color: var(--clr-dark-variant);
-}
-
-b {
-    color: var(--clr-dark);
-}
 
 .primary {
     color: var(--clr-primary);
@@ -149,7 +126,7 @@ aside .sidebar-manager {
     top: 1rem;
 }
 
-aside h3 {
+aside .t3 {
     font-weight: 400;
     margin: 0;
 }
@@ -169,20 +146,14 @@ aside .sidebar-manager a .theme-icon {
     transition: all .1s ease-in;
 }
 
-aside .sidebar-manager a:last-child {
-    position: absolute;
-    bottom: 1rem;
-    width: 100%;
-}
-
-aside .sidebar-manager a.active {
+.active23 {
     background: var(--clr-light);
     color: var(--clr-primary);
     margin-left: 0;
     border-left: 5px solid var(--clr-primary);
 }
 
-aside .sidebar-manager a.active::before {
+aside .sidebar-manager a.active23::before {
     content: '';
     width: 6px;
     height: 100%;
@@ -240,6 +211,10 @@ main .recent_order {
 
 main .recent_order h1 {
     color: var(--clr-dark);
+}
+
+.active1 {
+    color: var(--clr-primary);
 }
 
 main .recent_order table {
@@ -360,7 +335,7 @@ button .button__search{
     margin-top: 1.4rem;
 }
 
-.right h2 {
+.right title {
     color: var(--clr-dark);
 }
 
@@ -422,7 +397,7 @@ aside .top-manager div.close-manager {
         grid-template-columns: 7rem auto;
     }
 
-    aside .sidebar-manager h3 {
+    aside .sidebar-manager .t3 {
         display: none;
     }
 
@@ -458,11 +433,11 @@ aside .top-manager div.close-manager {
         }
     }
 
-    aside .logo-manager h2 {
+    aside .logo-manager title {
         display: inline;
     }
 
-    aside .sidebar-manager h3 {
+    aside .sidebar-manager .t3 {
         display: inline;
     }
 
@@ -522,4 +497,3 @@ aside .top-manager div.close-manager {
     }
 
 }
-

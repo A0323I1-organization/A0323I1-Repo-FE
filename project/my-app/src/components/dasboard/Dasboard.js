@@ -4,10 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faX,
     faMagnifyingGlassChart,
-    faEnvelope,
-    faReceipt,
-    faCircleExclamation,
-    faGear,
     faArrowRightFromBracket
 } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
@@ -18,95 +14,68 @@ import {NavLink} from "react-router-dom";
 
 export default function Dasboard() {
     const[isEmployee,setIs] = useState(true);
+    const [count ,setCount] = useState(0)
 
-    const activateLink = (event) => {
-        // Loại bỏ class "active" từ tất cả các phần tử <a> trong class "a"
-        var links = document.querySelectorAll('.a');
-        links.forEach(function (link) {
-            link.classList.remove('active');
-        });
+    // const activateLink = (event) => {
+    //     var links = document.querySelectorAll('.a');
+    //     links.forEach(function (link) {
+    //         link.classList.remove('active');
+    //     });
+    //     var clickedLink = event.currentTarget;
+    //     clickedLink.classList.add('active');
+    //     setCount(() => count + 1);
+    //     if(count % 2 === 0) {
+    //         setIs(true);
+    //     } else {
+    //         setIs(false);
+    //     }
+    // }
 
-        // Thêm class "active" vào phần tử <a> được nhấp vào
-        var clickedLink = event.currentTarget;
-        clickedLink.classList.add('active');
-    }
+    console.log(count)
 
     return (
         <>
-            <div className="container-manager">
-                {/*    aside section start*/}
-                <aside>
-                    <div className="top-manager">
-                        <div className="logo-manager">
-                            <h2>
-                                <img src={logoBrand} style={ {height:'100%', width: '100%'}}/>
-                            </h2>
-                        </div>
-                        <div className="close-manager" id="close_btn">
-                            <div className="theme-icon">
-                                <FontAwesomeIcon icon={faX} />
+            <div class="total">
+                <div className="container-manager">
+                    {/*    aside section start*/}
+                    <aside>
+                        <div className="top-manager">
+                            <div className="logo-manager">
+                                <h2 class="title">
+                                    <img src={logoBrand} style={ {height:'100%', width: '100%'}}/>
+                                </h2>
+                            </div>
+                            <div className="close-manager" id="close_btn">
+                                <div className="theme-icon">
+                                    <FontAwesomeIcon icon={faX} />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    {/*        end top*/}
-                    <div className="sidebar-manager">
-                        <NavLink href="#" className="a active" onClick={() => {
-                            setIs(true);
-                        }}>
-                            <div className="theme-icon">
-                                <FontAwesomeIcon icon={faUser} />
-                            </div>
-                            <h3>Employee</h3>
-                        </NavLink>
-                        <NavLink href="#" className="a active" onClick={() => {
-                            setIs(false);
-                        }}>
-                            <div className="theme-icon">
-                                <FontAwesomeIcon icon={faMagnifyingGlassChart} />
-                            </div>
-                            <h3>Analytics</h3>
+                        {/*        end top*/}
+                        <div className="sidebar-manager">
+                            <NavLink href="#" className={isEmployee ? "active23" : ""} onClick={() => setIs(true)}>
+                                <div className={isEmployee ? "theme-icon active1" : "theme-icon"}>
+                                    <FontAwesomeIcon icon={faUser} />
+                                </div>
+                                <h3 className={isEmployee ? "t3 active1" : "t3"}>Employee</h3>
+                            </NavLink>
+                            <NavLink href="#" className={isEmployee ? "" : "active23"} onClick={() => setIs(false)}>
+                                <div className={isEmployee ? "theme-icon" : "theme-icon active1"}>
+                                    <FontAwesomeIcon icon={faMagnifyingGlassChart} />
+                                </div>
+                                <h3 className={isEmployee ? "t3" : "t3 active1"}>Analytics</h3>
 
-                        </NavLink>
-                        <NavLink href="#" className="a active" onClick={() => {
-                            setIs(false);
-                        }}>
-                            <div className="theme-icon">
-                                <FontAwesomeIcon icon={faEnvelope} />
-                            </div>
-                            <h3>Messages</h3>
-
-                            <span className="msg_count">14</span>
-                        </NavLink>
-                        <NavLink href="#" className="a active" onClick={() => {
-                            setIs(false);
-                        }}>
-                            <div className="theme-icon">
-                                <FontAwesomeIcon icon={faReceipt} />
-                            </div>
-                            <h3>Calendar Show</h3>
-                        </NavLink>
-                        <a href="#" className="a" onClick={activateLink}>
-                            <div className="theme-icon">
-                                <FontAwesomeIcon icon={faCircleExclamation} />
-                            </div>
-                            <h3>Show Time</h3>
-
-                        </a>
-                        <a href="#" className="a" onClick={activateLink}>
-                            <div className="theme-icon">
-                                <FontAwesomeIcon icon={faGear} />
-                            </div>
-                            <h3>Settings</h3>
-                        </a>
-                        <a href="#" className="a" onClick={activateLink}>
-                            <div className="theme-icon">
-                                <FontAwesomeIcon icon={faArrowRightFromBracket} />
-                            </div>
-                            <h3>Log out</h3>
-                        </a>
-                    </div>
-                </aside>
-                {isEmployee ? <ListEmployee></ListEmployee> : <StatisticDashBoard/>}
+                            </NavLink>
+                            {/*<a href="#" className="a" onClick={activateLink}>*/}
+                            {/*    <div className="theme-icon">*/}
+                            {/*        <FontAwesomeIcon icon={faArrowRightFromBracket} />*/}
+                            {/*    </div>*/}
+                            {/*    <h3 class="t3">Log out</h3>*/}
+                            {/*</a>*/}
+                        </div>
+                    </aside>
+                    {isEmployee ? <ListEmployee></ListEmployee> : <></>}
+                </div>
             </div>
         </>
     );
