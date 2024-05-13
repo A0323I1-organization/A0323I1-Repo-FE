@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="692e8cdd-ee0d-464b-9656-f08b7dd5afe2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/project/my-app/src/components/employee/ListEmployee.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/my-app/src/components/employee/style.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/my-app/src/service/emoloyee/EmployeeService.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/my-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/my-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/my-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/my-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/my-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/my-app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/my-app/src/components/dasboard/Dasboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/my-app/src/components/dasboard/Dasboard.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2gPY6WWiRWWVcmCXjI3sC4lvpcT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev3&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/new_volum/codegym/jj/A0323I1-Repo-FE/project/my-app/src/service/emoloyee&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\new_volum\codegym\jj\A0323I1-Repo-FE\project\my-app\src\service\emoloyee" />
+      <recent name="D:\new_volum\codegym\jj\A0323I1-Repo-FE\project\my-app\src\components\employee" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="692e8cdd-ee0d-464b-9656-f08b7dd5afe2" name="Changes" comment="" />
+      <created>1715600509368</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715600509368</updated>
+      <workItem from="1715600514653" duration="36000" />
+      <workItem from="1715600553008" duration="1758000" />
+      <workItem from="1715602384754" duration="31000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,0 +1,223 @@
+
+.list{
+  width:100%;
+  padding: 0;
+  //margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-white: #fff;
+  --clr-dark: #363949;
+  --clr-dark-variant: #677483;
+  --clr-light: rgba(132, 139, 200, 0.18);
+
+  --card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+  --box-shadow: 0 2rem 3rem var(--clr-light);
+  /* =====>>  Font Color  <<===== */
+  --f1-color: #fff;
+  --f2-color: #000;
+  --f3-color: rgba(0, 0, 0, 0.8);
+  --f4-color: rgba(0, 0, 0, 0.6);
+  --f5-color: #0099cc;
+  --f6-color: #88cee6;
+  --bg1-color: #fff;
+  --bg2-color: #000;
+  --bg3-color: #33ccff;
+  --bg4-color: #33cc33;
+  --bg5-color: #0099cc;
+  --bg6-color: rgba(0, 0, 0, 0.4);
+  --bg7-color: rgba(0, 0, 0, 0.2);
+  --glass-bg: linear-gradient(
+                  to right bottom,
+                  rgba(255, 255, 255, 0.5),
+                  rgba(255, 255, 255, 0.3)
+  );
+  --C-lg-bg: linear-gradient(45deg, #ff3399, #ff9933);
+  --xxxl-fs: 2.2rem;
+  --xxl-fs: 1.8rem;
+  --xl-fs: 1.6rem;
+  --l-fs: 1.4rem;
+  --m-fs: 1.2rem;
+  --s-fs: 1.1rem;
+  --xs-fs: 1rem;
+  --m-2-5: 2.5rem;
+  --m-1-8: 1.8rem;
+  --m-1-5: 1.5rem;
+  --m-0-6: 0.6rem;
+  --m-0-5: 0.5rem;
+  --m-0-3: 0.3rem;
+  --p-2-5: 2.5rem;
+  --p-1-5: 1.5rem;
+  --p-1-0: 1rem;
+  --p-0-8: 0.8rem;
+  --p-0-5: 0.5rem;
+  --p-0-4: 0.4rem;
+  --p-0-3: 0.3rem;
+}
+
+.form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--card-padding) 0;
+}
+.form .searchInput{
+  width: 70%;
+  padding-left: 28px;
+  padding-right: 28px;
+
+}
+.form .searchInput:first-child{
+  display: flex;
+  align-items: center;
+}
+.form .searchInput:last-child{
+  display: flex;
+  justify-content: flex-end;
+}
+.form .searchInput:last-child label{
+  line-height: 40px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.form .formSearch{
+  width: 50%;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: var(--border-radius-2);
+  border: 1px solid #ccc;
+}
+
+
+.form .formSearch:focus{
+  outline: 1px solid #eff0f8;
+  border: none;
+}
+.form .searchButton{
+  margin-left: -30px;
+}
+.form .selectSearch{
+  width: 30%;
+  height: 40px;
+  padding: 0 10px;
+  margin-left: 20px;
+  border-radius: var(--border-radius-2);
+  border: 1px solid #ccc;
+
+}
+.form .selectSearch:focus{
+  outline: 1px solid #eff0f8;
+  border: none;
+}
+
+.recentOrder {
+  padding: 30px;
+  margin: 0 auto;
+}
+
+.recentOrder table {
+  background-color: var(--clr-white);
+  width: 100%;
+  border-radius: var(--border-radius-3);
+  padding: var(--card-padding);
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: all .3s ease;
+  color: var(--clr-dark);
+  border-collapse: collapse;
+}
+
+.recentOrder table:hover {
+  box-shadow: none;
+}
+
+.recentOrder table tbody tr {
+  height: 3.8rem;
+  border-bottom: 1px solid var(--clr-white);
+  color: var(--clr-dark-variant);
+}
+
+.recentOrder table tbody td {
+  height: 3.8rem;
+  border-bottom: 1px solid var(--clr-dark);
+
+}
+
+.recentOrder table tbody tr:last-child td {
+  border: none;
+}
+
+.recentOrder table tbody th {
+  height: 3.8rem;
+  border-bottom: 1px solid var(--clr-dark);
+}
+
+.recentOrder table tbody tr:last-child th {
+  border: none;
+}
+.customButton{
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+}
+
+.customButton button{
+  margin-right: 10px;
+}
+i{
+  color: black;
+}
+.cellWithStatus{
+  border-radius:30px ;
+  display: inline-block;
+  &.active{
+    background-color: rgba(0, 128, 0, 0.05);
+    color: green;
+    padding:5px 12px;
+  }
+  &.passive{
+    background-color: rgba(255, 0, 0, 0.05);
+    color:crimson;
+    padding:5px 10px;
+  }
+}
+.cellAction{
+  display:flex;
+  align-items: center;
+  gap: 15px;
+   .viewButton{
+     padding: 2px 5px;
+     border-radius: 5px;
+     color: darkblue;
+     border: 1px solid rgba(0, 0, 139, 0.596);
+   }
+}
+.detail{
+  flex:4;
+  padding : 20px;
+}
+.employeeTitleContainer{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.iconShow{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
