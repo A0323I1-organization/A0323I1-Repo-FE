@@ -9,7 +9,6 @@ import {Link, useParams} from 'react-router-dom';
 import ReactLoading from "react-loading";
 
 
-
 function CalendarShow() {
     const [listShowDates, setListShowDates] = useState([]);
     const [movie, setMovie] = useState({})
@@ -175,9 +174,7 @@ function CalendarShow() {
                                     <div>
                                         <ul>Thể Loại:
                                             <li>Hành Động</li>
-                                            <li>Tâm Lý
-                                            </li>
-
+                                            <li>Tâm Lý</li>
                                         </ul>
                                     </div>
                                     <div>
@@ -234,10 +231,10 @@ function CalendarShow() {
                                         showDates.map((showDate, index) => (
                                             <button
                                                 key={index}
-                                                value= {format(showDate.showDate, "dd-MM-yyyy")}
+                                                value={format(showDate.showDate, "dd-MM-yyyy")}
                                                 onClick={(e) => getShowDate(e, showDate)}
                                                 style={{
-                                                    color: selectedShowDate === format(showDate.showDate, "dd-MM-yyyy")? 'white' : 'black',
+                                                    color: selectedShowDate === format(showDate.showDate, "dd-MM-yyyy") ? 'white' : 'black',
                                                     backgroundColor: selectedShowDate === format(showDate.showDate, "dd-MM-yyyy") ? 'blue' : 'white'
                                                 }}
                                             >
