@@ -47,3 +47,12 @@ export const findAllUpcomingMovie = async () => {
         console.log(e);
     }
 };
+
+export const findAllMovie = async () => {
+    try {
+        let temp = await axios.get("http://localhost:8080/api");
+        return temp.data;
+    } catch (e) {
+        console.log(e);
+    }
+};

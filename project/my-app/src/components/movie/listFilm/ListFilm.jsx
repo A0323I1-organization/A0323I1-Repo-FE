@@ -113,7 +113,7 @@ function ListFilm() {
                             </li>
               ))}
           </ul>
-          {Object.keys(movies).length == 4 && status ?(
+          {Object.keys(movies).length === 8 && status ?(
           <div className="row" style={{ margin: "20px 0" }}>
             <div className="col-md-12 d-flex justify-content-center">
               <NavLink to={'/galaxy/phim-dang-chieu'} className="btn btn-outline-primary">
@@ -123,7 +123,7 @@ function ListFilm() {
           </div>
           ) : <></>}
           
-          {Object.keys(movies).length == 1 && !status ?(
+          {Object.keys(movies).length === 8 && !status ?(
           <div className="row" style={{ margin: "20px 0" }}>
             <div className="col-md-12 d-flex justify-content-center">
               <NavLink to={'/galaxy/phim-sap-chieu'} className="btn btn-outline-primary">

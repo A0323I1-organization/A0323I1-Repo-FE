@@ -23,7 +23,7 @@
 
 .videos{
     width: 100%;
-    
+
     --columns: 4;
     --spacing: 10px;
 
@@ -37,8 +37,8 @@
 .videos li {
     list-style-type: none;
     width: calc(100% / var(--columns) - (var(--spacing) * 2));
-	margin: var(--spacing);
-	padding: 4px;
+    margin: var(--spacing);
+    padding: 4px;
 }
 
 .videos li img {
@@ -131,6 +131,8 @@
     margin-bottom: 1rem;
 }
 
-.formResult.action {
+.formResult2 {
+    margin-left: 20%;
+    margin-bottom: 1rem;
     height: 200px;
 }
