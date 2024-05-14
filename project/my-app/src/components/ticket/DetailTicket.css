@@ -59,3 +59,19 @@ table tr:nth-child(even) {
 }
 
 
+.table-infor{
+    border: solid black 1px;
+    padding: 10px;
+    margin-bottom: 13%;
+}
+.table-infor Link {
+    text-decoration: none;
+
+}
+
+.table-infor button {
+    color: white;
+}
+
+
+

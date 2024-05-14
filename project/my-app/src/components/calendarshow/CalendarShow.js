@@ -7,6 +7,11 @@ import {format} from "date-fns";
 import {Link, useParams} from 'react-router-dom';
 
 import ReactLoading from "react-loading";
+import Loading from "../movie/loadingPage/Loading";
+import HeaderNew from "../movie/headerNew/HeaderNew";
+import Footer from "../movie/footer/Footer";
+import ScrollTop from "../movie/scroll/ScrollTop";
+import Promotion from "../movie/promotion/Promotion";
 
 
 function CalendarShow() {
@@ -106,22 +111,14 @@ function CalendarShow() {
 
     if (isLoading) {
         return (
-            <div className="pre-loading">
-                <p>Chờ xíu nhe....</p>
-                <ReactLoading
-                    type={"spinningBubbles"}
-                    color={"#3c84f1"}
-                    height={100}
-                    width={100}
-
-                />
-            </div>
+            <Loading/>
         )
     }
 
 
     return (
         <>
+            <HeaderNew></HeaderNew>
             <Col md={12}>
                 <div className="trailer">
                     <iframe width="100%"
@@ -277,7 +274,11 @@ function CalendarShow() {
             </Container>
 
             )
-
+            <div className="promotion-top">
+                <Promotion/>
+            </div>
+            <Footer></Footer>
+            <ScrollTop></ScrollTop>
         </>
 
     )

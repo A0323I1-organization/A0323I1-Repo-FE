@@ -5,7 +5,10 @@
     align-items: center;
     height: 100vh;
 }
-
+.promotion-top {
+    z-index: 99;
+    margin-top: 50px;
+}
 .pre-loading p {
     font-size: 18px;
     color: #555;
@@ -71,15 +74,11 @@
     max-width: 1700px;
     height: 80vh;
     overflow: hidden;
-    z-index: 9999;
+    z-index: 99;
 
 }
 
-/*.video-iframe {*/
-/*    width: 100%;*/
-/*    min-height: 100%;*/
-/*    z-index: 9999;*/
-/*}*/
+
 
 .content {
     justify-content: center;
@@ -189,7 +188,7 @@
 
 
 .review {
-    margin-top: 10%;
+    margin-top: 15%;
 }
 
 .review b {
@@ -268,6 +267,11 @@ hr {
         height:500px ;
     }
 
+    .promotion-top {
+        z-index: 99;
+        margin-top: 50px;
+    }
+
 }
 @media screen and (max-width: 1200px) {
     .nav-right {
@@ -294,6 +298,10 @@ hr {
         max-height: 100%;
         border: 0.5px solid black;
         float: right;
+    }
+    .promotion-top {
+        z-index: 99;
+        margin-top: 50px;
     }
 
 
@@ -325,10 +333,19 @@ hr {
     .introduce h2 {
         margin-bottom: 10px; /* Để tạo khoảng cách giữa tiêu đề và các phần tử khác */
     }
+
+    .promotion-top {
+        z-index: 99;
+        margin-top: 50px;
+    }
 }
 
 @media screen and (max-width: 330px) {
     .review {
         margin-top: 80%;
+    }
+    .promotion-top {
+        z-index: 99;
+        margin-top: 50px;
     }
 }

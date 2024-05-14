@@ -5,7 +5,7 @@ import { faAnglesRight, faTicket } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.css";
 import { useEffect, useState, useRef } from "react";
 import {findAllUpcomingMovie,findAllMovieIsShowing } from "../../../service/movieservice/MovieService";
-import { NavLink } from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import Loading from "../loadingPage/Loading";
 import HeaderNew from "../headerNew/HeaderNew";
 import SlideShow from "../slideShow/SlideShow";
@@ -17,6 +17,7 @@ function ListFilm() {
 
   const [movies, setMovies] = useState();
   const [status,setStatus] = useState(true);
+  console.log(movies)
 
   const handleGetAllMovieIsComing = async () => {
     let temp = await findAllMovieIsShowing();
@@ -64,7 +65,7 @@ function ListFilm() {
           style={{ marginBottom: 25 }}
           data-aos="fade-right"
         >
-          <ul className="title">
+          <ul className="title2">
             <li style={{ display: "flex" }}>
               <span /> <h4 className="h4Film">PHIM</h4>
             </li>
@@ -98,9 +99,9 @@ function ListFilm() {
                                   />
                                 </a>
                                 <div className={styles.listBtn}>
-                                  <a href="#" className={styles.buyClick}>
+                                  <Link to={`/booking/${item.movieId}`} className={styles.buyClick}>
                                     <FontAwesomeIcon icon={faTicket} /> <div style={{marginLeft:'5px'}}>Mua vé</div>
-                                  </a>
+                                  </Link>
                                 </div>
                               </div>
                               <div className={styles.videoInfo}>

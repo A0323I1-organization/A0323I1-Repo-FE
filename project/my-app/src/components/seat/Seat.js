@@ -8,6 +8,10 @@ import {Link, useParams} from "react-router-dom";
 import {format} from "date-fns";
 import ReactLoading from "react-loading";
 import axios from "axios";
+import Promotion from "../movie/promotion/Promotion";
+import Footer from "../movie/footer/Footer";
+import ScrollTop from "../movie/scroll/ScrollTop";
+import HeaderNew from "../movie/headerNew/HeaderNew";
 
 function Seat() {
 
@@ -119,6 +123,7 @@ function Seat() {
 
     return (
         <>
+            <HeaderNew></HeaderNew>
             <Container>
                 <Row>
                     <Col md={12}>
@@ -221,7 +226,7 @@ function Seat() {
                                     <div>
                                         <button className="btn btn-primary">
                                             <Link to={`/booking/${movieId}`}
-                                            style={{color:"white", textDecoration:"none"}}>
+                                                  style={{color: "white", textDecoration: "none"}}>
                                                 Quay Lại
                                             </Link>
                                         </button>
@@ -234,6 +239,8 @@ function Seat() {
                     </Col>
                 </Row>
             </Container>
+            <Footer></Footer>
+            <ScrollTop></ScrollTop>
         </>
     );
 }

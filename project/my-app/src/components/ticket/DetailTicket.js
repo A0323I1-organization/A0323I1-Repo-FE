@@ -1,10 +1,13 @@
 import * as ticketService from "../../service/ticket/TicketService";
 import * as seatService from "../../service/seat/SeatService";
 import {useEffect, useState} from "react";
-import {useLocation} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import {Col, Container, Row} from "react-bootstrap";
 import "./DetailTicket.css"
 import {getSeatById} from "../../service/seat/SeatService";
+import HeaderNew from "../movie/headerNew/HeaderNew";
+import Footer from "../movie/footer/Footer";
+import ScrollTop from "../movie/scroll/ScrollTop";
 
 function DetailTicket() {
     const location = useLocation();
@@ -48,6 +51,7 @@ function DetailTicket() {
     }
     return (
         <>
+            <HeaderNew></HeaderNew>
             <Container>
                 <Row>
                     <Col md={12}>
@@ -71,10 +75,10 @@ function DetailTicket() {
                 </Row>
 
 
-                <Row>
+                <Row  className="table-infor">
                     <Col md={12}>
                         <h2 style={{color: "rgb(21, 39, 241)"}}>THÔNG TIN ĐẶT VÉ</h2>
-                        <table border="1">
+                        <table>
 
                             <tr>
                                 <td colSpan="2">THÔNG TIN PHIM</td>
@@ -106,7 +110,7 @@ function DetailTicket() {
                             </tr>
                             <tr>
                                 <td>Thanh Toán</td>
-                                <td>Đã thanh toán qua Paypal</td>
+                                <td>Đã thanh toán qua Vnpay</td>
                             </tr>
                             <tr>
                                 <td colSpan="2">THÔNG TIN KHÁCH HÀNG</td>
@@ -131,10 +135,16 @@ function DetailTicket() {
                             <br/>
                             <small>Xin vui lòng đưa mã đặt vé đến quầy vé để nhận vé</small>
                         </div>
-                        <button className="btn-confirm"> Xác Nhận</button>
+                        <button className="btn-confirm" >
+                            <Link to={`/`} style={{textDecoration:"none", color:"white"}}>
+                                Xác Nhận
+                            </Link>
+                          </button>
                     </Col>
                 </Row>
             </Container>
+            <Footer></Footer>
+            <ScrollTop></ScrollTop>
         </>
     )
 

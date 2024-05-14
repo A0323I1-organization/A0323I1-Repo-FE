@@ -11,6 +11,7 @@ import React, {useState} from "react";
 import logoBrand from '../../assets/img/brand.jpg';
 import ListEmployee from "../employee/ListEmployee";
 import {NavLink} from "react-router-dom";
+import Static from "../statistics/StatisticDashBoard";
 
 export default function Dasboard() {
     const[isEmployee,setIs] = useState(true);
@@ -74,7 +75,7 @@ export default function Dasboard() {
                             {/*</a>*/}
                         </div>
                     </aside>
-                    {isEmployee ? <ListEmployee></ListEmployee> : <></>}
+                    {isEmployee ? <ListEmployee></ListEmployee> : <Static></Static>}
                 </div>
             </div>
         </>

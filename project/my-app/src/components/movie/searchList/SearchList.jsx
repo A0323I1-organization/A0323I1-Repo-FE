@@ -24,7 +24,11 @@ function SearchList() {
 
   const handleSearchFilmByName = async () => {
     let temp = await findAllMovieByMovieName(key);
-    setMovies(temp);
+    if(!movies) {
+      setMovies([]);
+    }else {
+      setMovies(temp);
+    }
   }
 
   const handleKeyPress = (event) => {
@@ -40,6 +44,8 @@ function SearchList() {
 
   return (
     <>
+      {!movies ? <Loading></Loading> :
+      <>
       <HeaderNew></HeaderNew>
 
       <div className={styles.formSearch}>
@@ -92,6 +98,8 @@ function SearchList() {
       </div>
       : <></>}
       <Footer></Footer>
+        </>
+      }
     </>
   );
 }
