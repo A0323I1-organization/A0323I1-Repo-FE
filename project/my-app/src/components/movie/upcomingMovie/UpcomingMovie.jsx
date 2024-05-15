@@ -60,12 +60,12 @@ function UpcomingMovie() {
                       <a href="#" className={styles.videoThumb}>
                         <img src={item.movieImage} alt={item.movieName} />
                       </a>
-                      <div className={styles.listBtn}>
-                        <a href="#" className={styles.buyClick}>
-                          <FontAwesomeIcon icon={faTicket} />{" "}
-                          <div style={{ marginLeft: "5px" }}>Mua vé</div>
-                        </a>
-                      </div>
+                      {/*<div className={styles.listBtn}>*/}
+                      {/*  <a href="#" className={styles.buyClick}>*/}
+                      {/*    <FontAwesomeIcon icon={faTicket} />{" "}*/}
+                      {/*    <div style={{ marginLeft: "5px" }}>Mua vé</div>*/}
+                      {/*  </a>*/}
+                      {/*</div>*/}
                     </div>
                     <div className={styles.videoInfo}>
                       <a href="#" className={styles.videoName}>

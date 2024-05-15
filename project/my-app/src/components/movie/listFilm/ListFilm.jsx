@@ -92,12 +92,12 @@ function ListFilm() {
                   <li data-aos="fade-up" key={index}>
                               <div className={styles.videoItem}>
                               <div className={styles.videoTop}>
-                                <a href="#" className={styles.videoThumb}>
+                                <Link to={`/booking/${item.movieId}`} className={styles.videoThumb}>
                                   <img
                                     src={item.movieImage}
                                     alt={item.movieName}
                                   />
-                                </a>
+                                </Link>
                                 <div className={styles.listBtn}>
                                   <Link to={`/booking/${item.movieId}`} className={styles.buyClick}>
                                     <FontAwesomeIcon icon={faTicket} /> <div style={{marginLeft:'5px'}}>Mua vé</div>
@@ -113,7 +113,7 @@ function ListFilm() {
                             </li>
               ))}
           </ul>
-          {Object.keys(movies).length === 8 && status ?(
+          {Object.keys(movies).length === 4 && status ?(
           <div className="row" style={{ margin: "20px 0" }}>
             <div className="col-md-12 d-flex justify-content-center">
               <NavLink to={'/galaxy/phim-dang-chieu'} className="btn btn-outline-primary">

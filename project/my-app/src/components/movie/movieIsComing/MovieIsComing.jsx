@@ -3,7 +3,7 @@ import styles from "../movieIsComing/MovieIsComing.module.scss";
 import { findAllMovieIsShowing } from "../../../service/movieservice/MovieService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTicket } from "@fortawesome/free-solid-svg-icons";
-import { NavLink } from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import HeaderNew from "../headerNew/HeaderNew";
 import Footer from "../footer/Footer";
 import Loading from "../loadingPage/Loading";
@@ -61,20 +61,20 @@ function MovieIsComing() {
                   <li data-aos="fade-up" key={index}>
                     <div className={styles.videoItem}>
                       <div className={styles.videoTop}>
-                        <a href="#" className={styles.videoThumb}>
+                        <Link to={`/booking/${item.movieId}`} className={styles.videoThumb}>
                           <img src={item.movieImage} alt={item.movieName} />
-                        </a>
+                        </Link>
                         <div className={styles.listBtn}>
-                          <a href="#" className={styles.buyClick}>
+                          <Link to={`/booking/${item.movieId}`} className={styles.buyClick}>
                             <FontAwesomeIcon icon={faTicket} />{" "}
                             <div style={{ marginLeft: "5px" }}>Mua vé</div>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                       <div className={styles.videoInfo}>
-                        <a href="#" className={styles.videoName}>
+                        <Link to={`/booking/${item.movieId}`} className={styles.videoName}>
                           {item.movieName}
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </li>

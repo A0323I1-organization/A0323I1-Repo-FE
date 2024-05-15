@@ -245,7 +245,7 @@ hr {
     color: white;
 }
 
-@media screen and (min-width: 767px) and (max-width: 992px){
+@media screen and (max-width: 889px){
     body {
         clear: both;
     }
@@ -265,11 +265,20 @@ hr {
     }
     .pic {
         height:500px ;
+        display: flex;
     }
 
     .promotion-top {
         z-index: 99;
         margin-top: 50px;
+    }
+
+    .review {
+        margin-top: 53%;
+    }
+
+    .pic img {
+        width: 57%;
     }
 
 }

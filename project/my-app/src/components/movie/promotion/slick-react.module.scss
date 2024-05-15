@@ -46,3 +46,19 @@
     text-align: center;
     font-weight: 500;
 }
+
+@media screen and (max-width: 992px) {
+
+    .title{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+
+    .title{
+        display: flex;
+    }
+
+}

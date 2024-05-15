@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import {findAllMovieIsShowing, findAllUpcomingMovie } from "../../../service/movieservice/MovieService";
 import "bootstrap/dist/css/bootstrap.css";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import {Link, NavLink, useLocation, useNavigate} from "react-router-dom";
 
 function HeaderNew() {
   const [movieIsComing, setMovieIsComing] = useState();
@@ -136,14 +136,14 @@ function HeaderNew() {
                       </div>
                       <ul className={`container ${styles.subnavVideo}`}>
                         {movieIsComing.slice(0,4).map((item, index) => (
-                          <li key={index}>
+                          <li key={index} className={styles.imgLi}>
                             <div className={styles.headerImg}>
-                            <a href="#">
+                            <Link to={`/booking/${item.movieId}`}>
                               <img src={item.movieImage} />
-                            </a>
+                            </Link>
                             </div>
                             <div className={styles.headerTitle}> 
-                            <a href="#">{item.movieName}</a>
+                              <Link to={`/booking/${item.movieId}`}>{item.movieName}</Link>
                             </div>
                           </li>
                         ))}
@@ -334,10 +334,10 @@ function HeaderNew() {
             </div>
             <ul className="dropdown-list-right">
               <li>
-                <a href="#">Phim đang chiếu</a>
+                <NavLink to={"/galaxy/phim-dang-chieu"}>Phim đang chiếu</NavLink>
               </li>
               <li>
-                <a href="#">Phim sắp chiếu</a>
+                <NavLink to={"/galaxy/phim-sap-chieu"}>Phim sắp chiếu</NavLink>
               </li>
             </ul>
           </div>

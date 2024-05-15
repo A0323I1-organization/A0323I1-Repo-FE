@@ -22,6 +22,7 @@
     cursor: pointer;
     font-weight: 600;
     color: #9d9d9d;
+    white-space: nowrap;
 }
 
 .title-list .title2 .title-line:hover {
@@ -50,4 +51,25 @@
 .h4Film {
     margin: 0;
     font-size: 1.4rem;
+}
+
+@media screen and (max-width: 992px) {
+
+    .row{
+        display: none;
+    }
+
+    .title-list .title2 li {
+        margin-right: 5%;
+
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+
+    .row{
+        display: block;
+    }
+
 }

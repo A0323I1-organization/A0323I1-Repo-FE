@@ -64,19 +64,13 @@ function SlideShow() {
             <div className="list">
                 <div className="item">
                 <img
-                    src="https://cdn.galaxycine.vn/media/2024/3/21/demon-slayer-kimetsu-no-yaiba-on-stage-mugen-train-arc-4-1_1710999294803.jpg"
+                    src="https://cdn.galaxycine.vn/media/2024/5/6/hanh-tinh-khi-2048_1714984306490.jpg"
                     alt=""
                 />
                 </div>
                 <div className="item">
                 <img
-                    src="https://cdn.galaxycine.vn/media/2024/3/21/gxk-2048_1710996917814.jpg"
-                    alt=""
-                />
-                </div>
-                <div className="item">
-                <img
-                    src="https://cdn.galaxycine.vn/media/2024/3/14/sang-den-3_1710397716255.jpg"
+                    src="https://cdn.galaxycine.vn/media/2024/4/15/0324-galaxy-on-zalo-2048x683_1713169097223.jpg"
                     alt=""
                 />
                 </div>

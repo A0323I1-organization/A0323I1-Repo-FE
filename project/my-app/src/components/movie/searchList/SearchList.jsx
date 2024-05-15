@@ -3,7 +3,7 @@ import {faTicket, faXmark} from "@fortawesome/free-solid-svg-icons";
 import Footer from "../footer/Footer";
 import HeaderNew from "../headerNew/HeaderNew";
 import styles from "../searchList/SearchList.module.scss";
-import {useLocation, useNavigate} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 import queryString from "query-string";
 import {findAllMovie, findAllMovieByMovieName} from "../../../service/movieservice/MovieService";
@@ -72,23 +72,23 @@ function SearchList() {
                           <li data-aos="fade-up" key={index}>
                             <div>
                               <div className={styles.videoTop}>
-                                <a href="#" className={styles.videoThumb}>
+                                <Link to={`/booking/${item.movieId}`} className={styles.videoThumb}>
                                   <img
                                       src={item.movieImage}
                                       alt={item.movieName}
                                   />
-                                </a>
+                                </Link>
                                 <div className={styles.listBtn}>
-                                  <a href="#" className={styles.buyClick}>
+                                  <Link to={`/booking/${item.movieId}`} className={styles.buyClick}>
                                     <FontAwesomeIcon icon={faTicket}/>
                                     <div style={{marginLeft: "5px"}}>Mua vé</div>
-                                  </a>
+                                  </Link>
                                 </div>
                               </div>
                               <div className={styles.videoInfo}>
-                                <a href="#" className={styles.videoName}>
+                                <Link to={`/booking/${item.movieId}`} className={styles.videoName}>
                                   {item.movieName}
-                                </a>
+                                </Link>
                               </div>
                             </div>
                           </li>

@@ -211,12 +211,14 @@ function CalendarShow() {
                     </Row>
                     <Col md={8}>
                         <div className="review">
+                            {/*<div style={{marginTop:"20%"}}>*/}
                             <b>
                                 Nội Dung Phim
                             </b>
                             <p>
                                 {movie.movieDetail}
                             </p>
+                            {/*</div>*/}
                         </div>
                     </Col>
                     <Col md={8}>

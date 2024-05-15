@@ -12,6 +12,7 @@ import Promotion from "../movie/promotion/Promotion";
 import Footer from "../movie/footer/Footer";
 import ScrollTop from "../movie/scroll/ScrollTop";
 import HeaderNew from "../movie/headerNew/HeaderNew";
+import Loading from "../movie/loadingPage/Loading";
 
 function Seat() {
 
@@ -108,16 +109,9 @@ function Seat() {
 
     if (isLoading) {
         return (
-            <div className="pre-loading">
-                <p>Chờ xíu nhe....</p>
-                <ReactLoading
-                    type={"spinningBubbles"}
-                    color={"#3c84f1"}
-                    height={100}
-                    width={100}
-
-                />
-            </div>
+            <>
+            <Loading/>
+            </>
         )
     }
 

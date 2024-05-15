@@ -67,17 +67,15 @@ export default function TopMembers() {
               <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">Top</th>
-                    <th scope="col">Member</th>
-                    <th scope="col">Total Tickets</th>
-                    <th scope="col">Total Price</th>
-                    <th scope="col">Point</th>
+                    <th scope="col" style={{textAlign: 'center'} }>Member</th>
+                    <th scope="col" style={{textAlign: 'center'} }>Total Tickets</th>
+                    <th scope="col" style={{textAlign: 'center'} }>Total Price</th>
+                    <th scope="col" style={{textAlign: 'center'} }>Point</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {customers?.map((customer, index) => (
+                  {customers?.map((customer) => (
                     <tr key={customer.customerId}>
-                      <td>{index+1}</td>
                       <td>{customer.customerName}</td>
                       <td>{customer.customerTotalTicket}</td>
                       <td>{customer.customerTotalPrice}</td>
